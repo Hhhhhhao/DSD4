@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Frame_Buffer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Frame_Buffer
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Generic_Counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/VGA_Sig_Gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_Sig_Gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sim_1/new/VGA_Sig_Gen_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_Sig_Gen_TB
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/s1786991/DSD4/VGA_interface/VGA_interface.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
