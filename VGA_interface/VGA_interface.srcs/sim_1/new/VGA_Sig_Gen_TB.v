@@ -49,8 +49,9 @@ module VGA_Sig_Gen_TB(
     // Initialize the input
     initial begin
         RESET = 1;
-        CONFIG_COLOURS = 16'd255;
+        CONFIG_COLOURS = 16'd0;
         # 100 RESET = 0;
+        # 100 CONFIG_COLOURS = 16'd255;
     end
     
     
