@@ -70,7 +70,6 @@ Define VGA signal parameters e.g. Horizontal and Vertical display time, pulse wi
 	parameter Vfp = 10; // Vertical Front Porch Time
 
 
-	
 /*
 Create a process that assigns the proper horizontal and vertical counter values for raster scan of the display
 */
@@ -78,8 +77,8 @@ Create a process that assigns the proper horizontal and vertical counter values 
 	// Define Horizontal and Vertical Counters to generate the VGA signals
 	wire [9:0] HCounter;
     wire [8:0] VCounter;
-    wire HS;
-    wire VS;
+    wire HTRIG;
+    wire VTRIG;
     
     // Instantiate Horizontal Signal Counter
     Generic_Counter # (
@@ -91,7 +90,7 @@ Create a process that assigns the proper horizontal and vertical counter values 
                        .RESET(RESET),
                        .ENABLE_IN(VGA_CLK),
                        .COUNT(HCounter),
-                       .TRIG_OUT(HS)
+                       .TRIG_OUT(HTRIG)
                        );
 
     // Instantiate Vertical Signal Counter
@@ -102,9 +101,9 @@ Create a process that assigns the proper horizontal and vertical counter values 
                        VerSynCounter(
                        .CLK(CLK),
                        .RESET(RESET),
-                       .ENABLE_IN(HS),
+                       .ENABLE_IN(HTRIG),
                        .COUNT(VCounter),
-                       .TRIG_OUT(VS)
+                       .TRIG_OUT(VTRIG)
                        );
     
    
@@ -115,49 +114,50 @@ Need to create the address of the next pixel. Concatanate and tie the look ahead
 	assign DPR_CLK = VGA_CLK;
 	assign VGA_ADDR = {VCounter[8:2], HCounter[9:2]};
 	
-	Frame_Buffer frame_buffer(
-	                          .B_CLK(DPR_CLK),
-	                          .B_ADDR(VGA_ADDR),
-	                          .B_DATA(VGA_DATA)
-	                          );
+//	Frame_Buffer frame_buffer(
+//	                          .B_CLK(VGA_CLK),
+//	                          .B_ADDR(VGA_ADDR),
+//	                          .B_DATA(VGA_DATA)
+//	                          );
 
 /*
 Create a process that generates the horizontal and vertical synchronisation signals, as well as the pixel colour information, using HCounter and VCounter. Do not forget to use CONFIG_COLOURS input to display the right foreground and background colours.
 */
-
-   // VGA HS VS output
+    
+    reg [15:0] colour;
+    
     always@(posedge CLK) begin
-        if(HCounter< HTpw)
+        if (RESET) begin
             VGA_HS <= 0;
-        else
-            VGA_HS <= 1;
-        
-        if(VCounter < VTpw)
             VGA_VS <= 0;
-        else      
-            VGA_VS <= 1;
+        end
+        else begin
+            if (HCounter <=  HTpw)
+                VGA_HS <= 0;
+            else
+                VGA_HS <= 1;
+            
+            if (VCounter <=  VTpw)
+                VGA_VS <= 0;
+            else
+                VGA_VS <= 1;
+        end
     end
     
     // COLOR OUT
-    
-    ////// TODO!!!!!!!!!!
-    /// NO color
     always@(posedge CLK) begin
-        // background
-        if(
-        (VGA_DATA == 0) && 
-        (HCounter >= HTpw + Hbp) && (HCounter  < HTs - Hfp) &&
-        (VCounter  >= VTpw + Vbp) && (VCounter  < VTs - Vfp)
-        )
-            VGA_COLOUR <= CONFIG_COLOURS[7:0];
-        else if(
-        (VGA_DATA == 1) && 
-        (HCounter  >= HTpw + Hbp) && (HCounter  < HTs - Hfp) &&
-        (VCounter >= VTpw + Vbp) && (VCounter  < VTs - Vfp)
-        )
-            VGA_COLOUR <= CONFIG_COLOURS[15:8];
+        if ((HCounter >= HTpw + Hbp) && (HCounter <= HTDisp + HTpw + Hbp) && (VCounter >= VTpw + Vbp) && (VCounter <= VTDisp + VTpw + Vbp))
+            colour <= CONFIG_COLOURS;
         else
-            VGA_COLOUR <= 0;
+            colour <= 0;
+    end
+    
+    always@(posedge CLK) begin
+        // background colour
+        if (VGA_DATA)
+            VGA_COLOUR <= colour[15:8];
+        else
+            VGA_COLOUR <= colour[7:0];
     end
 
 endmodule

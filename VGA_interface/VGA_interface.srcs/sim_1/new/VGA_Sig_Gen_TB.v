@@ -37,23 +37,22 @@ module VGA_Sig_Gen_TB(
     // Create CLK signal
     initial begin
         CLK = 0;
-        forever #10 CLK <= ~CLK;
+        forever #20 CLK <= ~CLK;
     end
     
     // Create VGA DATA Signal
     initial begin
         VGA_DATA = 0;
-        forever #40 VGA_DATA <= ~VGA_DATA;
+        forever #20 VGA_DATA <= ~VGA_DATA;
     end
     
     // Initialize the input
     initial begin
         RESET = 1;
         CONFIG_COLOURS = 16'd0;
-        # 100 RESET = 0;
-        # 100 CONFIG_COLOURS = 16'd255;
+        # 10 RESET = 0;
+        forever # 20 CONFIG_COLOURS <= CONFIG_COLOURS + 1;
     end
-    
     
     // Instantiate the test unit
     VGA_Sig_Gen vga(
@@ -68,6 +67,5 @@ module VGA_Sig_Gen_TB(
     .VGA_COLOUR(VGA_COLOUR)
     );
         
-        
-    
+
 endmodule
