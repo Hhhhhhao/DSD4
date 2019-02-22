@@ -37,7 +37,7 @@ module Frame_Buffer(
 
 	// A 256 x 128 1-bit memory to hold frame data
 	// The LSBs of the address correspond to the X axis, and the MSBs to the Y Axis reg [0:0] Mem [2**15-1:0]
-	reg [0:0] Mem [2**15-1:0];
+    reg [0:0] Mem [2**15-1:0];
 
 	// Port A - Read/Write e.g. to be used by microprocessor
 	always@(posedge A_CLK) begin

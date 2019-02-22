@@ -33,10 +33,9 @@ module wrapper(
     );
     
     // wires to VGA output
-    reg VGA_DATA;
     wire [7:0] VGA_COLOUR;  
     wire [14:0] VGA_ADDR;
-    wire A_DATA_IN;
+    reg A_DATA_IN;
     wire B_DATA_OUT;
     wire DPR_CLK;
     
@@ -48,19 +47,18 @@ module wrapper(
     wire FRAMEBUFFER_WE;            // connect to A_WE of frame buffer
     assign FRAMEBUFFER_WE = ~FRAMEBUFFER_ENABLE;
     
+    wire [6:0] VCounter;
+    wire [7:0] HCounter;
+    assign VCounter = VGA_ADDR[14:8];
+    assign HCounter = VGA_ADDR[7:0];
     
-    Generic_Counter # (
-                       .COUNTER_WIDTH(4),
-                       .COUNTER_MAX(15)
-                       )
-                      data_generator(
-                      .CLK(CLK),
-                      .RESET(RESET),
-                      .ENABLE_IN(IMAGE_ENABLE),
-                      .TRIG_OUT(A_DATA_IN)
-                      );
+    always@(posedge CLK) begin
+        if(VCounter[0]==0 && HCounter[0]==0)
+            A_DATA_IN <= 1;
+        else
+            A_DATA_IN <= 0;
+    end
 
-    
     // Instantiate Frame Buffer
     Frame_Buffer frame_buffer(
                    .A_CLK(CLK),
@@ -73,23 +71,13 @@ module wrapper(
                    .B_DATA(B_DATA_OUT)
                     );
                     
-    wire [8:2] VCounter;
-    assign VCounter = VGA_ADDR[14:8];
-    
-    always@(posedge CLK) begin
-        if(VCounter[0])
-            VGA_DATA <=  0;
-        else
-            VGA_DATA <= B_DATA_OUT;
-    end
-
     // Instantiate VGA
     VGA_Sig_Gen vga(
                     .CLK(CLK),
                     .CONFIG_COLOURS(CONFIG_COLOURS),
                     .RESET(RESET),
                     .DPR_CLK(DPR_CLK),
-                    .VGA_DATA(VGA_DATA),
+                    .VGA_DATA(B_DATA_OUT),
                     .VGA_ADDR(VGA_ADDR),
                     .VGA_HS(VGA_HS),
                     .VGA_VS(VGA_VS),
