@@ -26,6 +26,7 @@ module wrapper(
     input       RESET,                   // reset button
     input       GENERATOR_ENABLE,         // checked image data generator enable button (left button)
     input       FRAMEBUFFER_ENABLE,      // frame buffer write enable button (right button)
+    input       COLOUR_CHANGE_ENABLE,     // colour changing enable button (up button)
     output wire VGA_HS,                  // horizontal sync output
     output wire VGA_VS,                  // vertical sync output
     output reg  [11:0] COLOUR_OUT        // vga color output 
@@ -33,11 +34,14 @@ module wrapper(
     );
     
     // wires to VGA output
-    wire [7:0] VGA_COLOUR;  
+    reg  [15:0] VGA_COLOUR_INPUT;  
+    wire [7:0] VGA_COLOUR;
     wire [14:0] VGA_ADDR;
-    reg A_DATA_IN;
+    reg  A_DATA_IN;
     wire B_DATA_OUT;
     wire DPR_CLK;
+    wire [7:0]background_colour;
+    wire [7:0]foreground_colour;
     
     // wires to data generator
     wire IMAGE_ENABLE;
@@ -52,13 +56,23 @@ module wrapper(
     assign VCounter = VGA_ADDR[14:8];
     assign HCounter = VGA_ADDR[7:0];
     
+    // Checked image generator
     always@(posedge CLK) begin
         if(VCounter[0]==0 && HCounter[0]==0)
             A_DATA_IN <= 1;
         else
             A_DATA_IN <= 0;
     end
-
+    
+    // Instantiate Colour Changing Counter
+    Colour_Change colour_change(
+                    .CLK(CLK),
+                    .RESET(RESET),
+                    .COLOUR_CHANGE_ENABLE(COLOUR_CHANGE_ENABLE),
+                    .BACKGROUND_COLOUR(background_colour),
+                    .FOREGROUND_COLOUR(foreground_colour)
+                    );
+                      
     // Instantiate Frame Buffer
     Frame_Buffer frame_buffer(
                    .A_CLK(CLK),
@@ -74,7 +88,7 @@ module wrapper(
     // Instantiate VGA
     VGA_Sig_Gen vga(
                     .CLK(CLK),
-                    .CONFIG_COLOURS(CONFIG_COLOURS),
+                    .CONFIG_COLOURS(VGA_COLOUR_INPUT),
                     .RESET(RESET),
                     .DPR_CLK(DPR_CLK),
                     .VGA_DATA(B_DATA_OUT),
@@ -83,6 +97,13 @@ module wrapper(
                     .VGA_VS(VGA_VS),
                     .VGA_COLOUR(VGA_COLOUR)
                    );            
+    
+    always@(posedge CLK) begin
+        if(COLOUR_CHANGE_ENABLE)
+            VGA_COLOUR_INPUT <= {foreground_colour, ~background_colour};
+        else
+            VGA_COLOUR_INPUT <= CONFIG_COLOURS;
+    end
     
     always@(posedge CLK)  begin
         if (RESET)

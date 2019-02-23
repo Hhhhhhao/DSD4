@@ -9,18 +9,19 @@ create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir E:/Projects/DSD4/VGA_interface/VGA_interface.cache/wt [current_project]
-set_property parent.project_path E:/Projects/DSD4/VGA_interface/VGA_interface.xpr [current_project]
+set_property webtalk.parent_dir /afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.cache/wt [current_project]
+set_property parent.project_path /afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 read_verilog -library xil_defaultlib {
-  E:/Projects/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v
-  E:/Projects/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Frame_Buffer.v
-  E:/Projects/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/VGA_Sig_Gen.v
-  E:/Projects/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/wrapper.v
+  /afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v
+  /afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Frame_Buffer.v
+  /afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Colour_Change.v
+  /afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/VGA_Sig_Gen.v
+  /afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/wrapper.v
 }
-read_xdc E:/Projects/DSD4/VGA_interface/VGA_interface.srcs/constrs_1/new/vga_constraints.xdc
-set_property used_in_implementation false [get_files E:/Projects/DSD4/VGA_interface/VGA_interface.srcs/constrs_1/new/vga_constraints.xdc]
+read_xdc /afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/constrs_1/new/vga_constraints.xdc
+set_property used_in_implementation false [get_files /afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/constrs_1/new/vga_constraints.xdc]
 
 synth_design -top wrapper -part xc7a35tcpg236-1
 write_checkpoint -noxdef wrapper.dcp
