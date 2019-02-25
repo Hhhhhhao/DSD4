@@ -2,53 +2,47 @@
 # Vivado v2015.2 (64-bit)
 # SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
 # IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
-# Start of session at: Sat Feb 23 15:13:13 2019
-# Process ID: 24416
-# Log file: /afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.runs/synth_1/wrapper.vds
-# Journal file: /afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.runs/synth_1/vivado.jou
+# Start of session at: Mon Feb 25 13:28:48 2019
+# Process ID: 6178
+# Log file: /home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.runs/synth_1/wrapper.vds
+# Journal file: /home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source wrapper.tcl -notrace
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:arty-s7-50:part0:1.0 available at /group/teaching/cd/VivadoData/Vivado/2015.2/data/boards/board_files/arty-s7-50/B.0/board.xml as part xc7s50csga324-1 specified in board_part file is either invalid or not available
 Command: synth_design -top wrapper -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
-INFO: [Common 17-1223] The version limit for your license is '2018.01' and will expire in -388 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [Common 17-1223] The version limit for your license is '2015.12' and will expire in -1152 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1101.777 ; gain = 166.520 ; free physical = 3172 ; free virtual = 20605
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1054.480 ; gain = 154.520 ; free physical = 978 ; free virtual = 90238
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'wrapper' [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/wrapper.v:23]
-INFO: [Synth 8-638] synthesizing module 'Colour_Change' [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Colour_Change.v:23]
-INFO: [Synth 8-638] synthesizing module 'Generic_Counter' [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
+INFO: [Synth 8-638] synthesizing module 'wrapper' [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/wrapper.v:23]
+INFO: [Synth 8-638] synthesizing module 'Colour_Change' [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Colour_Change.v:23]
+INFO: [Synth 8-638] synthesizing module 'Generic_Counter' [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
 	Parameter COUNTER_WIDTH bound to: 17 - type: integer 
 	Parameter COUNTER_MAX bound to: 99999 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Generic_Counter' (1#1) [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
-WARNING: [Synth 8-350] instance 'Counter_17bits' of module 'Generic_Counter' requires 5 connections, but only 4 given [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Colour_Change.v:39]
-INFO: [Synth 8-638] synthesizing module 'Generic_Counter__parameterized0' [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Generic_Counter' (1#1) [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
+WARNING: [Synth 8-350] instance 'Counter_17bits' of module 'Generic_Counter' requires 5 connections, but only 4 given [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Colour_Change.v:38]
+INFO: [Synth 8-638] synthesizing module 'Generic_Counter__parameterized0' [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
 	Parameter COUNTER_WIDTH bound to: 2 - type: integer 
 	Parameter COUNTER_MAX bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Generic_Counter__parameterized0' (1#1) [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
-WARNING: [Synth 8-350] instance 'Counter_2bits' of module 'Generic_Counter' requires 5 connections, but only 4 given [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Colour_Change.v:51]
-INFO: [Synth 8-638] synthesizing module 'Generic_Counter__parameterized1' [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Generic_Counter__parameterized0' (1#1) [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
+WARNING: [Synth 8-350] instance 'Counter_2bits' of module 'Generic_Counter' requires 5 connections, but only 4 given [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Colour_Change.v:50]
+INFO: [Synth 8-638] synthesizing module 'Generic_Counter__parameterized1' [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
 	Parameter COUNTER_WIDTH bound to: 10 - type: integer 
 	Parameter COUNTER_MAX bound to: 999 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Generic_Counter__parameterized1' (1#1) [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
-WARNING: [Synth 8-350] instance 'Counter_10bits' of module 'Generic_Counter' requires 5 connections, but only 4 given [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Colour_Change.v:63]
-INFO: [Synth 8-638] synthesizing module 'Generic_Counter__parameterized2' [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Generic_Counter__parameterized1' (1#1) [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
+WARNING: [Synth 8-350] instance 'Counter_10bits' of module 'Generic_Counter' requires 5 connections, but only 4 given [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Colour_Change.v:62]
+INFO: [Synth 8-638] synthesizing module 'Generic_Counter__parameterized2' [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
 	Parameter COUNTER_WIDTH bound to: 8 - type: integer 
 	Parameter COUNTER_MAX bound to: 128 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Generic_Counter__parameterized2' (1#1) [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
-WARNING: [Synth 8-350] instance 'BackgroundCorlour' of module 'Generic_Counter' requires 5 connections, but only 4 given [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Colour_Change.v:75]
-INFO: [Synth 8-638] synthesizing module 'Generic_Counter__parameterized3' [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
-	Parameter COUNTER_WIDTH bound to: 8 - type: integer 
-	Parameter COUNTER_MAX bound to: 128 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Generic_Counter__parameterized3' (1#1) [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
-WARNING: [Synth 8-350] instance 'ForegroundCorlour' of module 'Generic_Counter' requires 5 connections, but only 4 given [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Colour_Change.v:87]
-INFO: [Synth 8-256] done synthesizing module 'Colour_Change' (2#1) [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Colour_Change.v:23]
-INFO: [Synth 8-638] synthesizing module 'Frame_Buffer' [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Frame_Buffer.v:23]
-INFO: [Synth 8-256] done synthesizing module 'Frame_Buffer' (3#1) [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Frame_Buffer.v:23]
-WARNING: [Synth 8-350] instance 'frame_buffer' of module 'Frame_Buffer' requires 8 connections, but only 7 given [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/wrapper.v:76]
-INFO: [Synth 8-638] synthesizing module 'VGA_Sig_Gen' [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/VGA_Sig_Gen.v:22]
+INFO: [Synth 8-256] done synthesizing module 'Generic_Counter__parameterized2' (1#1) [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
+WARNING: [Synth 8-350] instance 'Corlour' of module 'Generic_Counter' requires 5 connections, but only 4 given [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Colour_Change.v:74]
+INFO: [Synth 8-256] done synthesizing module 'Colour_Change' (2#1) [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Colour_Change.v:23]
+INFO: [Synth 8-638] synthesizing module 'Frame_Buffer' [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Frame_Buffer.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Frame_Buffer' (3#1) [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Frame_Buffer.v:23]
+WARNING: [Synth 8-350] instance 'frame_buffer' of module 'Frame_Buffer' requires 8 connections, but only 7 given [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/wrapper.v:80]
+INFO: [Synth 8-638] synthesizing module 'VGA_Sig_Gen' [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/VGA_Sig_Gen.v:22]
 	Parameter HTs bound to: 800 - type: integer 
 	Parameter HTpw bound to: 96 - type: integer 
 	Parameter HTDisp bound to: 640 - type: integer 
@@ -59,24 +53,24 @@ INFO: [Synth 8-638] synthesizing module 'VGA_Sig_Gen' [/afs/inf.ed.ac.uk/user/s1
 	Parameter VTDisp bound to: 480 - type: integer 
 	Parameter Vbp bound to: 29 - type: integer 
 	Parameter Vfp bound to: 10 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'Generic_Counter__parameterized4' [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
+INFO: [Synth 8-638] synthesizing module 'Generic_Counter__parameterized3' [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
 	Parameter COUNTER_WIDTH bound to: 2 - type: integer 
 	Parameter COUNTER_MAX bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Generic_Counter__parameterized4' (3#1) [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
-WARNING: [Synth 8-350] instance 'Bit2Counter' of module 'Generic_Counter' requires 5 connections, but only 4 given [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/VGA_Sig_Gen.v:44]
-INFO: [Synth 8-638] synthesizing module 'Generic_Counter__parameterized5' [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Generic_Counter__parameterized3' (3#1) [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
+WARNING: [Synth 8-350] instance 'Bit2Counter' of module 'Generic_Counter' requires 5 connections, but only 4 given [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/VGA_Sig_Gen.v:44]
+INFO: [Synth 8-638] synthesizing module 'Generic_Counter__parameterized4' [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
 	Parameter COUNTER_WIDTH bound to: 10 - type: integer 
 	Parameter COUNTER_MAX bound to: 799 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Generic_Counter__parameterized5' (3#1) [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
-INFO: [Synth 8-638] synthesizing module 'Generic_Counter__parameterized6' [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Generic_Counter__parameterized4' (3#1) [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
+INFO: [Synth 8-638] synthesizing module 'Generic_Counter__parameterized5' [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
 	Parameter COUNTER_WIDTH bound to: 9 - type: integer 
 	Parameter COUNTER_MAX bound to: 520 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Generic_Counter__parameterized6' (3#1) [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
-INFO: [Synth 8-256] done synthesizing module 'VGA_Sig_Gen' (4#1) [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/VGA_Sig_Gen.v:22]
-INFO: [Synth 8-256] done synthesizing module 'wrapper' (5#1) [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/wrapper.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Generic_Counter__parameterized5' (3#1) [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/Generic_Counter.v:23]
+INFO: [Synth 8-256] done synthesizing module 'VGA_Sig_Gen' (4#1) [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/VGA_Sig_Gen.v:22]
+INFO: [Synth 8-256] done synthesizing module 'wrapper' (5#1) [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/sources_1/new/wrapper.v:23]
 WARNING: [Synth 8-3331] design wrapper has unconnected port GENERATOR_ENABLE
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1138.066 ; gain = 202.809 ; free physical = 3134 ; free virtual = 20568
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1090.777 ; gain = 190.816 ; free physical = 941 ; free virtual = 90201
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -86,39 +80,39 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1138.066 ; gain = 202.809 ; free physical = 3134 ; free virtual = 20569
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1090.777 ; gain = 190.816 ; free physical = 941 ; free virtual = 90201
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/constrs_1/new/vga_constraints.xdc]
-Finished Parsing XDC File [/afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.srcs/constrs_1/new/vga_constraints.xdc]
+Parsing XDC File [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/constrs_1/new/vga_constraints.xdc]
+Finished Parsing XDC File [/home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.srcs/constrs_1/new/vga_constraints.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1427.105 ; gain = 0.000 ; free physical = 2976 ; free virtual = 20410
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1412.809 ; gain = 0.000 ; free physical = 782 ; free virtual = 90042
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1427.109 ; gain = 491.852 ; free physical = 2975 ; free virtual = 20409
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 781 ; free virtual = 90041
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1427.109 ; gain = 491.852 ; free physical = 2975 ; free virtual = 20409
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 781 ; free virtual = 90041
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1427.109 ; gain = 491.852 ; free physical = 2975 ; free virtual = 20409
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 781 ; free virtual = 90041
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1427.109 ; gain = 491.852 ; free physical = 2960 ; free virtual = 20394
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 765 ; free virtual = 90026
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -134,7 +128,7 @@ Detailed RTL Component Info :
 	   2 Input     17 Bit       Adders := 1     
 	   2 Input     10 Bit       Adders := 2     
 	   2 Input      9 Bit       Adders := 1     
-	   2 Input      8 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 2     
 +---Registers : 
 	               17 Bit    Registers := 1     
@@ -142,9 +136,9 @@ Detailed RTL Component Info :
 	               12 Bit    Registers := 1     
 	               10 Bit    Registers := 2     
 	                9 Bit    Registers := 1     
-	                8 Bit    Registers := 3     
+	                8 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 13    
+	                1 Bit    Registers := 12    
 +---RAMs : 
 	              32K Bit         RAMs := 1     
 +---Muxes : 
@@ -197,20 +191,13 @@ Detailed RTL Component Info :
 +---Registers : 
 	                8 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
-Module Generic_Counter__parameterized3 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      8 Bit       Adders := 1     
-+---Registers : 
-	                8 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
 Module Frame_Buffer 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 2     
 +---RAMs : 
 	              32K Bit         RAMs := 1     
-Module Generic_Counter__parameterized4 
+Module Generic_Counter__parameterized3 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      2 Bit       Adders := 1     
@@ -219,14 +206,14 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      2 Bit        Muxes := 1     
-Module Generic_Counter__parameterized5 
+Module Generic_Counter__parameterized4 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     10 Bit       Adders := 1     
 +---Registers : 
 	               10 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
-Module Generic_Counter__parameterized6 
+Module Generic_Counter__parameterized5 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      9 Bit       Adders := 1     
@@ -255,15 +242,15 @@ BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1427.109 ; gain = 491.852 ; free physical = 2960 ; free virtual = 20394
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 765 ; free virtual = 90026
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3331] design wrapper has unconnected port GENERATOR_ENABLE
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1427.109 ; gain = 491.852 ; free physical = 2960 ; free virtual = 20394
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 765 ; free virtual = 90026
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1427.109 ; gain = 491.852 ; free physical = 2960 ; free virtual = 20394
+Finished Parallel Reinference  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 765 ; free virtual = 90026
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -294,16 +281,16 @@ WARNING: [Synth 8-3332] Sequential element (\COLOUR_OUT_reg[3] ) is unused and w
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1427.113 ; gain = 491.855 ; free physical = 2947 ; free virtual = 20381
+Finished Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 750 ; free virtual = 90010
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1427.113 ; gain = 491.855 ; free physical = 2947 ; free virtual = 20381
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 750 ; free virtual = 90010
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1427.113 ; gain = 491.855 ; free physical = 2947 ; free virtual = 20381
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 750 ; free virtual = 90010
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
@@ -311,10 +298,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1427.113 ; gain = 491.855 ; free physical = 2896 ; free virtual = 20330
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 701 ; free virtual = 89961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1427.113 ; gain = 491.855 ; free physical = 2896 ; free virtual = 20330
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 701 ; free virtual = 89961
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -327,7 +314,7 @@ Start Technology Mapping
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-4480] The timing for the instance \frame_buffer/Mem_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1435.113 ; gain = 499.855 ; free physical = 2878 ; free virtual = 20312
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 683 ; free virtual = 89944
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -345,7 +332,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1435.113 ; gain = 499.855 ; free physical = 2878 ; free virtual = 20312
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 683 ; free virtual = 89944
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -358,7 +345,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1435.113 ; gain = 499.855 ; free physical = 2878 ; free virtual = 20312
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 683 ; free virtual = 89944
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -370,13 +357,13 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1435.113 ; gain = 499.855 ; free physical = 2878 ; free virtual = 20312
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 683 ; free virtual = 89944
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1435.113 ; gain = 499.855 ; free physical = 2878 ; free virtual = 20312
+Start Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 683 ; free virtual = 89944
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1435.113 ; gain = 499.855 ; free physical = 2878 ; free virtual = 20312
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 683 ; free virtual = 89944
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -395,40 +382,39 @@ Report Cell Usage:
 |1     |BUFG     |     1|
 |2     |CARRY4   |     4|
 |3     |LUT1     |    22|
-|4     |LUT2     |    14|
-|5     |LUT3     |    37|
-|6     |LUT4     |    28|
-|7     |LUT5     |    11|
-|8     |LUT6     |    29|
+|4     |LUT2     |    13|
+|5     |LUT3     |    35|
+|6     |LUT4     |    25|
+|7     |LUT5     |     9|
+|8     |LUT6     |    26|
 |9     |RAMB36E1 |     1|
-|10    |FDRE     |   122|
+|10    |FDRE     |   114|
 |11    |IBUF     |    20|
 |12    |OBUF     |    14|
 +------+---------+------+
 
 Report Instance Areas: 
-+------+----------------------+--------------------------------+------+
-|      |Instance              |Module                          |Cells |
-+------+----------------------+--------------------------------+------+
-|1     |top                   |                                |   303|
-|2     |  colour_change       |Colour_Change                   |   147|
-|3     |    BackgroundCorlour |Generic_Counter__parameterized2 |    27|
-|4     |    Counter_10bits    |Generic_Counter__parameterized1 |    28|
-|5     |    Counter_17bits    |Generic_Counter                 |    59|
-|6     |    Counter_2bits     |Generic_Counter__parameterized0 |     6|
-|7     |    ForegroundCorlour |Generic_Counter__parameterized3 |    27|
-|8     |  frame_buffer        |Frame_Buffer                    |     2|
-|9     |  vga                 |VGA_Sig_Gen                     |    94|
-|10    |    Bit2Counter       |Generic_Counter__parameterized4 |     6|
-|11    |    HonSynCounter     |Generic_Counter__parameterized5 |    30|
-|12    |    VerSynCounter     |Generic_Counter__parameterized6 |    24|
-+------+----------------------+--------------------------------+------+
++------+-------------------+--------------------------------+------+
+|      |Instance           |Module                          |Cells |
++------+-------------------+--------------------------------+------+
+|1     |top                |                                |   284|
+|2     |  colour_change    |Colour_Change                   |   128|
+|3     |    Corlour        |Generic_Counter__parameterized2 |    35|
+|4     |    Counter_10bits |Generic_Counter__parameterized1 |    28|
+|5     |    Counter_17bits |Generic_Counter                 |    59|
+|6     |    Counter_2bits  |Generic_Counter__parameterized0 |     6|
+|7     |  frame_buffer     |Frame_Buffer                    |     2|
+|8     |  vga              |VGA_Sig_Gen                     |    94|
+|9     |    Bit2Counter    |Generic_Counter__parameterized3 |     6|
+|10    |    HonSynCounter  |Generic_Counter__parameterized4 |    30|
+|11    |    VerSynCounter  |Generic_Counter__parameterized5 |    24|
++------+-------------------+--------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1435.113 ; gain = 499.855 ; free physical = 2878 ; free virtual = 20312
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 683 ; free virtual = 89944
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1435.113 ; gain = 94.297 ; free physical = 2877 ; free virtual = 20311
-Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1435.113 ; gain = 499.855 ; free physical = 2877 ; free virtual = 20311
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1412.809 ; gain = 74.297 ; free physical = 683 ; free virtual = 89943
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1412.809 ; gain = 512.848 ; free physical = 683 ; free virtual = 89943
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 25 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -438,8 +424,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-38 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
+36 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1435.117 ; gain = 391.340 ; free physical = 2877 ; free virtual = 20311
-report_utilization: Time (s): cpu = 00:00:00.76 ; elapsed = 00:00:00.82 . Memory (MB): peak = 1467.133 ; gain = 0.000 ; free physical = 2875 ; free virtual = 20310
-INFO: [Common 17-206] Exiting Vivado at Sat Feb 23 15:13:38 2019...
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1413.809 ; gain = 405.328 ; free physical = 683 ; free virtual = 89943
+report_utilization: Time (s): cpu = 00:00:00.66 ; elapsed = 00:00:00.70 . Memory (MB): peak = 1445.832 ; gain = 0.000 ; free physical = 682 ; free virtual = 89942
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 25 13:29:10 2019...

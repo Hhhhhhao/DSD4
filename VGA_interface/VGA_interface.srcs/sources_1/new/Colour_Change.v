@@ -24,8 +24,7 @@ module Colour_Change(
     input CLK,
     input COLOUR_CHANGE_ENABLE,
     input RESET,
-    output [7:0] BACKGROUND_COLOUR,
-    output [7:0] FOREGROUND_COLOUR
+    output [7:0] COLOUR_OUT
     );
     
         
@@ -72,23 +71,11 @@ module Colour_Change(
                         .COUNTER_WIDTH(8),
                         .COUNTER_MAX(128)
                         )
-                         BackgroundCorlour(
+                         Corlour(
                         .CLK(CLK),
                         .RESET(RESET),
                         .ENABLE_IN(enable_1),
-                        .COUNT(BACKGROUND_COLOUR)
-                        );
-
-     // Change the Foreground Colour
-     Generic_Counter #  (
-                        .COUNTER_WIDTH(8),
-                        .COUNTER_MAX(128)
-                        )
-                         ForegroundCorlour(
-                        .CLK(CLK),
-                        .RESET(RESET),
-                        .ENABLE_IN(enable_1),
-                        .COUNT(FOREGROUND_COLOUR)
+                        .COUNT(COLOUR_OUT)
                         );
  
 endmodule

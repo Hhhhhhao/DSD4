@@ -40,8 +40,9 @@ module wrapper(
     reg  A_DATA_IN;
     wire B_DATA_OUT;
     wire DPR_CLK;
-    wire [7:0]background_colour;
-    wire [7:0]foreground_colour;
+    wire [7:0] colour;
+    wire [7:0] background_colour;
+    wire [7:0] foreground_colour;
     
     // wires to data generator
     wire IMAGE_ENABLE;
@@ -69,9 +70,11 @@ module wrapper(
                     .CLK(CLK),
                     .RESET(RESET),
                     .COLOUR_CHANGE_ENABLE(COLOUR_CHANGE_ENABLE),
-                    .BACKGROUND_COLOUR(background_colour),
-                    .FOREGROUND_COLOUR(foreground_colour)
+                    .COLOUR_OUT(colour)
                     );
+                    
+    assign background_colour = ~colour;
+    assign foreground_colour = colour;
                       
     // Instantiate Frame Buffer
     Frame_Buffer frame_buffer(
@@ -100,7 +103,7 @@ module wrapper(
     
     always@(posedge CLK) begin
         if(COLOUR_CHANGE_ENABLE)
-            VGA_COLOUR_INPUT <= {foreground_colour, ~background_colour};
+            VGA_COLOUR_INPUT <= {foreground_colour, background_colour};
         else
             VGA_COLOUR_INPUT <= CONFIG_COLOURS;
     end

@@ -48,9 +48,10 @@ set_msg_config -id {HDL 9-1654} -limit 100000
 start_step write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set_param xicom.use_bs_reader 1
   debug::add_scope template.lib 1
   open_checkpoint wrapper_routed.dcp
-  set_property webtalk.parent_dir /afs/inf.ed.ac.uk/user/s17/s1786991/DSD4/VGA_interface/VGA_interface.cache/wt [current_project]
+  set_property webtalk.parent_dir /home/s1786991/DSD/DSD4/VGA_interface/VGA_interface.cache/wt [current_project]
   write_bitstream -force wrapper.bit 
   catch { write_sysdef -hwdef wrapper.hwdef -bitfile wrapper.bit -meminfo wrapper.mmi -ltxfile debug_nets.ltx -file wrapper.sysdef }
   close_msg_db -file write_bitstream.pb
