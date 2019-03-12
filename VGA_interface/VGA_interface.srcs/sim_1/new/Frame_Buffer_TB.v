@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 21.02.2019 13:10:11
+// Create Date: 25.02.2019 12:45:53
 // Design Name: 
-// Module Name: Frame_Buffer_TB
+// Module Name: Frame_Buffer_Tb
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Frame_Buffer_TB(
+module Frame_Buffer_Tb(
+
     );
-    
     reg A_CLK;
     reg B_CLK;
     reg [14:0] A_ADDR;
@@ -76,4 +76,3 @@ module Frame_Buffer_TB(
     end
     
 endmodule
-    
