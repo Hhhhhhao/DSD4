@@ -32,7 +32,7 @@ module Processor(
     
     // rom signals
     output      [7:0]   ROM_ADDRESS,
-    output      [7:0]   ROM_DATA,
+    input       [7:0]   ROM_DATA,
     
     // inetrrupt signals
     input       [1:0]   BUS_INTERRUPTS_RAISE,
@@ -77,6 +77,7 @@ module Processor(
     assign ROM_ADDRESS = ActualAddress;
     assign ProgMemoryOut = ROM_DATA;
     
+    
     // Instantiate the ALU
     // the processor has an integrated ALU that can do several different opeartions
     wire [7:0] ALU_OUT;
@@ -89,9 +90,9 @@ module Processor(
         .OUT_RESULT(ALU_OUT)
     );
     
-    //The microprocessor is essentially a state machine, with one sequential pipeline
-    //of states for each operation.
-    //The current list of operations is:
+    // The microprocessor is essentially a state machine, with one sequential pipeline
+    // of states for each operation.
+    // The current list of operations is:
     // 0: Read from memory to A
     // 1: Read from memory to B
     // 2: Write to memory from A
@@ -105,7 +106,7 @@ module Processor(
     // 10: Function call
     // 11: Return from function call
     // 12: Dereference A
-    //13: Dereference B
+    // 13: Dereference B
     
     parameter [7:0] // Program thread selection
     IDLE                    = 8'hF0, // Waits here until an interrupt wakes up the processor.
@@ -120,7 +121,7 @@ module Processor(
     // Data Flow
     READ_FROM_MEM_TO_A      = 8'h10, // Wait to find what address to read, save reg select.
     READ_FROM_MEM_TO_B      = 8'h11, // Wait to find what address to read, save reg select.
-    READ_FROM_MEM_0         = 8'h12, // Set BUS_ADDR ti designated address.
+    READ_FROM_MEM_0         = 8'h12, // Set BUS_ADDR to designated address.
     READ_FROM_MEM_1         = 8'h13, // Wait increments program counter by 2. Reset to offset.
     READ_FROM_MEM_2         = 8'h14, // Wires memmory output to chosen register, end op.
     WRITE_TO_MEM_FROM_A     = 8'h20, // Reads Op+1 to find what address to Write to
@@ -128,23 +129,26 @@ module Processor(
     WRITE_TO_MEM_0          = 8'h22, // Wait increments program counter by 2. Reset offset.
     
     // Data Manipulation
-    DO_MATHS_OPP_SAVE_IN_A = 8'h30, // The result of maths op. is available, save it to Reg A
-    DO_MATHS_OPP_SAVE_IN_B = 8'h31, // The result of maths op. is available, save it to Reg B
-    DO_MATHS_OPP_0         = 8'h32; // wait for new op address to settle, end op
-    
- 
+    DO_MATHS_OPP_SAVE_IN_A  = 8'h30, // The result of maths op. is available, save it to Reg A
+    DO_MATHS_OPP_SAVE_IN_B  = 8'h31, // The result of maths op. is available, save it to Reg B
+    DO_MATHS_OPP_0          = 8'h32, // wait for new op address to settle, end op
 
-/*
-Complete the above parameter list for In/Equality, Goto Address, Goto Idle, function start, Return from function
-and dereference operations.
-*/
+    // IN/Equality
+    IF_A_EQUALITY_B_GOTO    = 8'h40,
     
-    ///////////////////////////
-    // FILL THIS AREA
-    //////////////////////////
+    // Goto Addr
+    GOTO                    = 8'h50,
+    
+    // Function Call & Return
+    FUNCTION_START          = 8'h60,
+    RETURN                  = 8'h61,
     
     
-    
+    // Dereference Operations
+    DE_REFERENCE_A          = 8'h70,
+    DE_REFERENCE_B          = 8'h71;
+   
+     
     // Sequential part of the State Machine
     reg [7:0] CurrState, NextState;
     always@(posedge CLK) begin
@@ -198,12 +202,12 @@ and dereference operations.
             ///////////////////////////////////////////////////////////////
             // Thread states
             IDLE: begin
-                if(BUS_INTERRUPTS_RAISE[0]) begin  // Interrupt Request A
+                if(BUS_INTERRUPTS_RAISE[0]) begin  // Interrupt Request A, mouse interrupt
                     NextState           = GET_THREAD_START_ADDR_0;
                     NextProgCounter     = 8'hFF;
                     NextInterruptAck    = 2'b01;
                 end
-                else if (BUS_INTERRUPTS_RAISE[1]) begin // Interrupt Request B
+                else if (BUS_INTERRUPTS_RAISE[1]) begin // Interrupt Request B, timer interrupt
                     NextState           = GET_THREAD_START_ADDR_0;
                     NextProgCounter     = 8'hFE;
                     NextInterruptAck    = 2'b10;
@@ -356,11 +360,64 @@ and dereference operations.
             
  /*
  Complete the above case statement  for In/Equality, Goto Address, Goto Idle, function start, Return from 
-function, and Dereference operations.
-*/
-////////////////////////////////
-////////////////////////////////
-//            FILL IN THIS AREA    
+function, and Dereference operations.*/
+
+            ////////////////////////////////////////////////////////////////
+            // In/Equality: if condition is satisfied, goto address
+            IF_A_EQUALITY_B_GOTO: begin
+                if(ALU_OUT) begin
+                    NextState       <= GOTO;                   
+                    NextProgCounter =  CurrProgCounter+1;
+                end
+                else begin
+                    NextState       <= CHOOSE_OP;
+                    NextProgCounter =  CurrProgCounter+2;
+                end
+            end
+            
+            
+            ///////////////////////////////////////////////////////////////
+            // GOTO Logic
+            GOTO: begin
+                NextState       <= CHOOSE_OPP;
+                NextProgCounter =  ProgMemoryOut;
+            end
+            
+            
+            ///////////////////////////////////////////////////////////////
+            // Function Call & Return
+            // Function Start
+            FUNCTION_START: begin
+                NextState       <= GOTO;
+                NextProgContext =  CurrProgCounter+1;
+                NextProgCounter =  ProgMemoryOut;
+            end
+            
+            // return from a function call
+            RETURN: begin
+                NextState       <= CHOOSE_OP;
+                NextProgCounter =  CurrProgContext; 
+            end
+            
+            
+            ///////////////////////////////////////////////////////////////
+            // DEREFERENCE OPERATIONS
+            DE_REFERENCE_A: begin
+                NextState       <= READ_FROM_MEM_2;
+                NextBusAddr     =  CurrRegA;
+                NextRegSelect   =  1'b0;
+                NextProgCounter =  CurrProgCounter+1;
+                 
+            end
+            
+            DE_REFERENCE_B: begin
+                NextState       <= READ_FROM_MEM_2;
+                NextBusAddr     =  CurrRegB;
+                NextRegSelect   =  1'b1;
+                NextProgCounter =  CurrProgCounter+1;
+             
+            end
+
             default: begin
                 NextState = CurrState;
             end
