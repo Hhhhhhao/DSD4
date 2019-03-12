@@ -30,6 +30,9 @@ module VGA(
     
     );
     
+    reg A_DATA_IN;
+    wire [7:0] VGA_COLOUR;
+    wire [14:0] VGA_ADDR;
     wire [6:0] VCounter;
     wire [7:0] HCounter;
     assign VCounter = VGA_ADDR[14:8];
@@ -48,7 +51,7 @@ module VGA(
                    .A_CLK(CLK),
                    .A_ADDR(VGA_ADDR),
                    .A_DATA_IN(A_DATA_IN),
-                    // .A_DATA_OUT(VGA_DATA),
+                    //.A_DATA_OUT(VGA_DATA),
                    .A_WE(FRAMEBUFFER_WE),
                    .B_CLK(DPR_CLK),
                    .B_ADDR(VGA_ADDR),
@@ -58,7 +61,7 @@ module VGA(
     // Instantiate VGA
     VGA_Sig_Gen vga(
                     .CLK(CLK),
-                    .CONFIG_COLOURS(VGA_COLOUR_INPUT),
+                    .CONFIG_COLOURS(CONFIG_COLOURS),
                     .RESET(RESET),
                     .DPR_CLK(DPR_CLK),
                     .VGA_DATA(B_DATA_OUT),
@@ -68,12 +71,6 @@ module VGA(
                     .VGA_COLOUR(VGA_COLOUR)
                    );            
     
-    always@(posedge CLK) begin
-        if(COLOUR_CHANGE_ENABLE)
-            VGA_COLOUR_INPUT <= {foreground_colour, background_colour};
-        else
-            VGA_COLOUR_INPUT <= CONFIG_COLOURS;
-    end
     
     always@(posedge CLK)  begin
         if (RESET)

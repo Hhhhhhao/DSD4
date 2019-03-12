@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Tue Mar 12 21:11:31 2019
+# Process ID: 20385
+# Log file: /home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.runs/synth_1/VGA.vds
+# Journal file: /home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source VGA.tcl -notrace
