@@ -24,7 +24,6 @@ module wrapper(
     input       CLK,                     // board clock: 100MHz
     input       [15:0] CONFIG_COLOURS,   // VGA config colour
     input       RESET,                   // reset button
-    input       GENERATOR_ENABLE,         // checked image data generator enable button (left button)
     input       FRAMEBUFFER_ENABLE,      // frame buffer write enable button (right button)
     input       COLOUR_CHANGE_ENABLE,     // colour changing enable button (up button)
     output wire VGA_HS,                  // horizontal sync output
@@ -43,10 +42,6 @@ module wrapper(
     wire [7:0] colour;
     wire [7:0] background_colour;
     wire [7:0] foreground_colour;
-    
-    // wires to data generator
-    wire IMAGE_ENABLE;
-    assign IMAGE_ENABLE = ~GENERATOR_ENABLE;
     
     // registers and wires to Frame Buffer
     wire FRAMEBUFFER_WE;            // connect to A_WE of frame buffer
@@ -113,11 +108,11 @@ module wrapper(
             COLOUR_OUT <= 0;
         else begin
             // B
-            COLOUR_OUT[11:8] <= {2'b0, 2'b0, VGA_COLOUR[7:6]};
+            COLOUR_OUT[11:8] <= {VGA_COLOUR[7:6], 2'b0, 2'b0};
             // G
-            COLOUR_OUT[7:4] <= {2'b0, VGA_COLOUR[5:3]};
+            COLOUR_OUT[7:4] <= {VGA_COLOUR[5:3], 2'b0};
             // R
-            COLOUR_OUT[3:0] <= {2'b0, VGA_COLOUR[2:0]};
+            COLOUR_OUT[3:0] <= {VGA_COLOUR[2:0], 2'b0};
         end
     end
    

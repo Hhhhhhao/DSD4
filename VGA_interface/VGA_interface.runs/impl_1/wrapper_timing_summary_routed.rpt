@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.2 (lin64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date         : Mon Feb 25 13:30:15 2019
-| Host         : tla05.see.ed.ac.uk running 64-bit Scientific Linux release 7.5 (Nitrogen)
+| Date         : Tue Feb 26 10:23:30 2019
+| Host         : tla02.see.ed.ac.uk running 64-bit Scientific Linux release 7.5 (Nitrogen)
 | Command      : report_timing_summary -warn_on_violation -max_paths 10 -file wrapper_timing_summary_routed.rpt -rpx wrapper_timing_summary_routed.rpx
 | Design       : wrapper
 | Device       : 7a35t-cpg236
@@ -50,7 +50,7 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 115 register/latch pins with no clock driven by root clock pin: CLK (HIGH)
+ There are 89 register/latch pins with no clock driven by root clock pin: CLK (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: vga/Bit2Counter/TRIGGER_OUT_reg/C (HIGH)
 
@@ -67,21 +67,21 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 287 pins that are not constrained for maximum delay. (HIGH)
+ There are 245 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
 5. checking no_input_delay
 --------------------------
- There are 20 input ports with no input delay specified. (HIGH)
+ There are 12 input ports with no input delay specified. (HIGH)
 
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
 6. checking no_output_delay
 ---------------------------
- There are 10 ports with no output delay specified. (HIGH)
+ There are 6 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 

@@ -65,8 +65,6 @@ set_property PACKAGE_PIN U18 [get_ports RESET]
 # ENABLE    
 set_property PACKAGE_PIN T17 [get_ports FRAMEBUFFER_ENABLE]
     set_property IOSTANDARD LVCMOS33 [get_ports FRAMEBUFFER_ENABLE]
-set_property PACKAGE_PIN W19 [get_ports GENERATOR_ENABLE]
-    set_property IOSTANDARD LVCMOS33 [get_ports GENERATOR_ENABLE]
 set_property PACKAGE_PIN T18 [get_ports COLOUR_CHANGE_ENABLE]
     set_property IOSTANDARD LVCMOS33 [get_ports COLOUR_CHANGE_ENABLE]      
 
@@ -75,8 +73,6 @@ set_property PACKAGE_PIN P19 [get_ports VGA_HS]
     set_property IOSTANDARD LVCMOS33 [get_ports VGA_HS]
 set_property PACKAGE_PIN R19 [get_ports VGA_VS]
     set_property IOSTANDARD LVCMOS33 [get_ports VGA_VS]
-
-
 
 
 # CLK   

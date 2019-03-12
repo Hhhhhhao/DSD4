@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.2 (lin64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date         : Mon Feb 25 13:30:00 2019
-| Host         : tla05.see.ed.ac.uk running 64-bit Scientific Linux release 7.5 (Nitrogen)
+| Date         : Tue Feb 26 10:23:15 2019
+| Host         : tla02.see.ed.ac.uk running 64-bit Scientific Linux release 7.5 (Nitrogen)
 | Command      : report_drc
 -------------------------------------------------------------------------------------------
 
@@ -20,13 +20,48 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 2
+             Violations found: 9
 
 2. REPORT DETAILS
 -----------------
 BUFC-1#1 Warning
 Input Buffer Connections  
-Input buffer GENERATOR_ENABLE_IBUF_inst has no loads. An input buffer must drive an internal load.
+Input buffer CONFIG_COLOURS[10]_IBUF_inst has no loads. An input buffer must drive an internal load.
+Related violations: <none>
+
+BUFC-1#2 Warning
+Input Buffer Connections  
+Input buffer CONFIG_COLOURS[13]_IBUF_inst has no loads. An input buffer must drive an internal load.
+Related violations: <none>
+
+BUFC-1#3 Warning
+Input Buffer Connections  
+Input buffer CONFIG_COLOURS[14]_IBUF_inst has no loads. An input buffer must drive an internal load.
+Related violations: <none>
+
+BUFC-1#4 Warning
+Input Buffer Connections  
+Input buffer CONFIG_COLOURS[15]_IBUF_inst has no loads. An input buffer must drive an internal load.
+Related violations: <none>
+
+BUFC-1#5 Warning
+Input Buffer Connections  
+Input buffer CONFIG_COLOURS[2]_IBUF_inst has no loads. An input buffer must drive an internal load.
+Related violations: <none>
+
+BUFC-1#6 Warning
+Input Buffer Connections  
+Input buffer CONFIG_COLOURS[5]_IBUF_inst has no loads. An input buffer must drive an internal load.
+Related violations: <none>
+
+BUFC-1#7 Warning
+Input Buffer Connections  
+Input buffer CONFIG_COLOURS[6]_IBUF_inst has no loads. An input buffer must drive an internal load.
+Related violations: <none>
+
+BUFC-1#8 Warning
+Input Buffer Connections  
+Input buffer CONFIG_COLOURS[7]_IBUF_inst has no loads. An input buffer must drive an internal load.
 Related violations: <none>
 
 CFGBVS-1#1 Warning

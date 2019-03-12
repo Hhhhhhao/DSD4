@@ -56,8 +56,8 @@ module Colour_Change(
 
      // Frequency to 1Hz
      Generic_Counter # (
-                        .COUNTER_WIDTH(10),
-                        .COUNTER_MAX(999)
+                        .COUNTER_WIDTH(8),
+                        .COUNTER_MAX(249)
                        )
                          Counter_10bits(
                         .CLK(CLK),
