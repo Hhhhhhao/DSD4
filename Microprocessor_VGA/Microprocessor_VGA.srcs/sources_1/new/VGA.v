@@ -22,37 +22,41 @@
 
 module VGA(
     input       CLK,                     // board clock: 100MHz
-    input       [15:0] CONFIG_COLOURS,   // VGA config colour
-    input       RESET,                   // reset button
+    input       RESET,
+    input       [7:0] BUS_ADDR,          // BUS_ADDR
+    input       [7:0] BUS_DATA,          // BUS_DATA decide config colour
+    input       BUS_WE,                   // reset button
     output wire VGA_HS,                  // horizontal sync output
     output wire VGA_VS,                  // vertical sync output
     output reg  [11:0] COLOUR_OUT        // vga color output 
-    
     );
     
-    reg A_DATA_IN;
-    wire [7:0] VGA_COLOUR;
-    wire [14:0] VGA_ADDR;
-    wire [6:0] VCounter;
-    wire [7:0] HCounter;
-    assign VCounter = VGA_ADDR[14:8];
-    assign HCounter = VGA_ADDR[7:0];
     
-    // Checked image generator
-    always@(posedge CLK) begin
-        if(VCounter[0]==0 && HCounter[0]==0)
-            A_DATA_IN <= 1;
-        else
-            A_DATA_IN <= 0;
-    end
+    // setup the base address
+    parameter [7:0] VGABaseAddr  = 8'hB0;
+    parameter VGAAddrWidth = 3;
+    
+    // BaseAddr + 0 -> Set Colour to 
+    // BaseAddr + 1 -> Set X address
+    // BaseAddr + 2 -> Set Y address
+    
+    // wires and registers
+    wire [7:0]  VGA_COLOUR;
+    wire [14:0] VGA_ADDR;
+    reg  [15:0] CONFIG_COLOURS;
+    
+    // wires and registers of frame buffer
+    reg [14:0] FB_ADDR;
+    reg FB_DATA_IN;
+                      
                       
     // Instantiate Frame Buffer
     Frame_Buffer frame_buffer(
                    .A_CLK(CLK),
-                   .A_ADDR(VGA_ADDR),
-                   .A_DATA_IN(A_DATA_IN),
+                   .A_ADDR(FB_ADDR),
+                   .A_DATA_IN(FB_DATA_IN),
                     //.A_DATA_OUT(VGA_DATA),
-                   .A_WE(FRAMEBUFFER_WE),
+                   .A_WE(BUS_WE),
                    .B_CLK(DPR_CLK),
                    .B_ADDR(VGA_ADDR),
                    .B_DATA(B_DATA_OUT)
@@ -69,11 +73,10 @@ module VGA(
                     .VGA_HS(VGA_HS),
                     .VGA_VS(VGA_VS),
                     .VGA_COLOUR(VGA_COLOUR)
-                   );            
-    
-    
-    always@(posedge CLK)  begin
-        if (RESET)
+                   );
+
+    always@(posedge CLK) begin
+        if(RESET)
             COLOUR_OUT <= 0;
         else begin
             // B
@@ -85,5 +88,32 @@ module VGA(
         end
     end
     
+    // at VGA base address 0xB0, set config colour
+    always@(posedge CLK) begin
+        if(RESET)
+            CONFIG_COLOURS <= 0;
+        else if ((BUS_ADDR == VGABaseAddr)&BUS_WE) begin
+            CONFIG_COLOURS[15:8] <= BUS_DATA;
+            CONFIG_COLOURS[7:0]  <= ~BUS_DATA;
+        end
+    end
     
-    endmodule
+    // at VGA base address + 1, 0XB1, set X address
+    
+    // at VGA base address + 2, 0XB2, set Y address
+    always@(posedge CLK) begin
+        if(RESET)
+            FB_ADDR <= 0;
+        else if ((BUS_ADDR == VGABaseAddr + 8'h01)&BUS_WE) begin
+            FB_ADDR[7:0] <= BUS_DATA;
+        end
+        else if ((BUS_ADDR == VGABaseAddr + 8'h02)&BUS_WE) begin
+            FB_ADDR[14:8] <= BUS_DATA[6:0];
+            FB_DATA_IN <= BUS_DATA[7];
+        end
+    end
+
+
+    
+    
+endmodule

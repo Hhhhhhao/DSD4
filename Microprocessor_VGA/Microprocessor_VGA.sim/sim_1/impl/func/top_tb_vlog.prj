@@ -1,0 +1,9 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "top_tb_func_impl.v"
+verilog xil_defaultlib  "../../../../Microprocessor_VGA.srcs/sim_1/new/top_tb.v"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

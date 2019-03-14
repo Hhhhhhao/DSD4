@@ -24,17 +24,18 @@ module ROM(
     // standard signals
     input               CLK,
     // Bus signals
-    output  reg         DATA,
+    output  reg  [7:0]  DATA,
     input        [7:0]  ADDR
     );
     
-    parameter RAMAddrWidth = 8;
+    parameter ROMAddrWidth = 8;
     
     // Memory
-    reg [7:0] ROM[2**RAMAddrWidth-1:0];
+    reg [7:0] ROM[2**ROMAddrWidth-1:0];
     
     // Load program
-    initial $readmemh("Complete_Demo_ROM.txt", ROM);
+    initial $display("Loading ROM.");
+    initial $readmemh("/home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/ROM.mem", ROM);
     
     // single port rom
     always@(posedge CLK)

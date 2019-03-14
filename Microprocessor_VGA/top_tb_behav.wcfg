@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="top_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="25" />
+   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/CLK">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/COLOUR_OUT">
+      <obj_property name="ElementShortName">COLOUR_OUT[11:0]</obj_property>
+      <obj_property name="ObjectShortName">COLOUR_OUT[11:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/RESET">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/VGA_HS">
+      <obj_property name="ElementShortName">VGA_HS</obj_property>
+      <obj_property name="ObjectShortName">VGA_HS</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/VGA_VS">
+      <obj_property name="ElementShortName">VGA_VS</obj_property>
+      <obj_property name="ObjectShortName">VGA_VS</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/BUS_ADDR">
+      <obj_property name="ElementShortName">BUS_ADDR[7:0]</obj_property>
+      <obj_property name="ObjectShortName">BUS_ADDR[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/BUS_DATA">
+      <obj_property name="ElementShortName">BUS_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">BUS_DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/BUS_INTERRUPTS_ACK">
+      <obj_property name="ElementShortName">BUS_INTERRUPTS_ACK[1:0]</obj_property>
+      <obj_property name="ObjectShortName">BUS_INTERRUPTS_ACK[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/BUS_INTERRUPTS_RAISE">
+      <obj_property name="ElementShortName">BUS_INTERRUPTS_RAISE[1:0]</obj_property>
+      <obj_property name="ObjectShortName">BUS_INTERRUPTS_RAISE[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/uut/BUS_WE">
+      <obj_property name="ElementShortName">BUS_WE</obj_property>
+      <obj_property name="ObjectShortName">BUS_WE</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/ROM_ADDR">
+      <obj_property name="ElementShortName">ROM_ADDR[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ROM_ADDR[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/ROM_DATA">
+      <obj_property name="ElementShortName">ROM_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ROM_DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/ram/BufferedBusData">
+      <obj_property name="ElementShortName">BufferedBusData[7:0]</obj_property>
+      <obj_property name="ObjectShortName">BufferedBusData[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/vga/frame_buffer/A_ADDR">
+      <obj_property name="ElementShortName">A_ADDR[14:0]</obj_property>
+      <obj_property name="ObjectShortName">A_ADDR[14:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/vga/frame_buffer/Mem">
+      <obj_property name="ElementShortName">Mem[32767:0][0:0]</obj_property>
+      <obj_property name="ObjectShortName">Mem[32767:0][0:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/uut/vga/frame_buffer/A_DATA_IN">
+      <obj_property name="ElementShortName">A_DATA_IN</obj_property>
+      <obj_property name="ObjectShortName">A_DATA_IN</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/uut/vga/frame_buffer/A_DATA_OUT">
+      <obj_property name="ElementShortName">A_DATA_OUT</obj_property>
+      <obj_property name="ObjectShortName">A_DATA_OUT</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/uut/vga/frame_buffer/A_WE">
+      <obj_property name="ElementShortName">A_WE</obj_property>
+      <obj_property name="ObjectShortName">A_WE</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/vga/frame_buffer/B_ADDR">
+      <obj_property name="ElementShortName">B_ADDR[14:0]</obj_property>
+      <obj_property name="ObjectShortName">B_ADDR[14:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/uut/vga/frame_buffer/B_CLK">
+      <obj_property name="ElementShortName">B_CLK</obj_property>
+      <obj_property name="ObjectShortName">B_CLK</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/uut/vga/frame_buffer/B_DATA">
+      <obj_property name="ElementShortName">B_DATA</obj_property>
+      <obj_property name="ObjectShortName">B_DATA</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/uut/timer/TargetReached">
+      <obj_property name="ElementShortName">TargetReached</obj_property>
+      <obj_property name="ObjectShortName">TargetReached</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/timer/Timer">
+      <obj_property name="ElementShortName">Timer[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Timer[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/vga/FB_ADDR">
+      <obj_property name="ElementShortName">FB_ADDR[14:0]</obj_property>
+      <obj_property name="ObjectShortName">FB_ADDR[14:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/uut/vga/FB_DATA_IN">
+      <obj_property name="ElementShortName">FB_DATA_IN</obj_property>
+      <obj_property name="ObjectShortName">FB_DATA_IN</obj_property>
+   </wvobject>
+</wave_config>

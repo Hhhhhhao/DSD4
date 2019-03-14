@@ -28,7 +28,7 @@ module ALU(
     // I/O
     input       [7:0]   IN_A,
     input       [7:0]   IN_B,
-    input       [3:0]   ALU_Op_Code,
+    input       [3:0]   IN_OPP_TYPE,
     output      [7:0]   OUT_RESULT 
     );
     
@@ -39,7 +39,7 @@ module ALU(
             Out <= 0;
         else begin
             
-            case(ALU_Op_Code)
+            case(IN_OPP_TYPE)
                 // Maths Operations
                 // Add A + B
                 4'h0:   Out <= IN_A + IN_B;

@@ -46,7 +46,7 @@ module RAM(
     reg         [7:0]   Mem[2**RAMAddrWidth-1:0];
     
     // Initialise the memory for data preloading, initialising variables, and decalring constants
-    initial $readmemh("Complete_Demo_RAM.txt", Mem);
+    initial $readmemh("/home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/RAM.mem", Mem);
     
     // single port ram
     always@(posedge CLK) begin

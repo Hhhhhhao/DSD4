@@ -226,15 +226,15 @@ module Processor(
             
             // Assign the new program counter value
             GET_THREAD_START_ADDR_1:begin
-                NextState <= GET_THREAD_START_ADDR_2;
-                NextProgCounter <= ProgMemoryOut;
+                NextState = GET_THREAD_START_ADDR_2;
+                NextProgCounter = ProgMemoryOut;
             end
             
             // Wait fot the new program counter value to settle
             GET_THREAD_START_ADDR_2: begin
-                NextState <= CHOOSE_OPP;
+                NextState = CHOOSE_OPP;
             end
-            
+
             
             ///////////////////////////////////////////////////////////////
             // CHOOSE_OPP - Another case statement to choose which operation to perform
@@ -338,7 +338,7 @@ module Processor(
             // The MSBs of the operation type determines the maths operation type.
             // At this stage the results is ready to be collected form the ALU.
             DO_MATHS_OPP_SAVE_IN_A: begin
-                NextState       = DO_MATH_OPP_0;
+                NextState       = DO_MATHS_OPP_0;
                 NextRegA        = ALU_OUT;
                 NextProgCounter = CurrProgCounter+1;
             end            
@@ -348,13 +348,13 @@ module Processor(
             // The MSBs of the operation type determines the maths operation type.
             // At this stage the results is ready to be collected form the ALU.
             DO_MATHS_OPP_SAVE_IN_B: begin
-                NextState       = DO_MATH_OPP_0;
+                NextState       = DO_MATHS_OPP_0;
                 NextRegB        = ALU_OUT;
                 NextProgCounter = CurrProgCounter+1;
             end
             
             // wait state for new prog address to settle
-            DO_MATH_OPP_0: begin
+            DO_MATHS_OPP_0: begin
                 NextState <= CHOOSE_OPP;
             end   
             
@@ -366,11 +366,11 @@ function, and Dereference operations.*/
             // In/Equality: if condition is satisfied, goto address
             IF_A_EQUALITY_B_GOTO: begin
                 if(ALU_OUT) begin
-                    NextState       <= GOTO;                   
+                    NextState       = GOTO;                   
                     NextProgCounter =  CurrProgCounter+1;
                 end
                 else begin
-                    NextState       <= CHOOSE_OP;
+                    NextState       = CHOOSE_OPP;
                     NextProgCounter =  CurrProgCounter+2;
                 end
             end
@@ -379,7 +379,7 @@ function, and Dereference operations.*/
             ///////////////////////////////////////////////////////////////
             // GOTO Logic
             GOTO: begin
-                NextState       <= CHOOSE_OPP;
+                NextState       = CHOOSE_OPP;
                 NextProgCounter =  ProgMemoryOut;
             end
             
@@ -388,14 +388,14 @@ function, and Dereference operations.*/
             // Function Call & Return
             // Function Start
             FUNCTION_START: begin
-                NextState       <= GOTO;
+                NextState       = GOTO;
                 NextProgContext =  CurrProgCounter+1;
                 NextProgCounter =  ProgMemoryOut;
             end
             
             // return from a function call
             RETURN: begin
-                NextState       <= CHOOSE_OP;
+                NextState       = CHOOSE_OPP;
                 NextProgCounter =  CurrProgContext; 
             end
             
@@ -403,7 +403,7 @@ function, and Dereference operations.*/
             ///////////////////////////////////////////////////////////////
             // DEREFERENCE OPERATIONS
             DE_REFERENCE_A: begin
-                NextState       <= READ_FROM_MEM_2;
+                NextState       = READ_FROM_MEM_2;
                 NextBusAddr     =  CurrRegA;
                 NextRegSelect   =  1'b0;
                 NextProgCounter =  CurrProgCounter+1;
@@ -411,7 +411,7 @@ function, and Dereference operations.*/
             end
             
             DE_REFERENCE_B: begin
-                NextState       <= READ_FROM_MEM_2;
+                NextState       = READ_FROM_MEM_2;
                 NextBusAddr     =  CurrRegB;
                 NextRegSelect   =  1'b1;
                 NextProgCounter =  CurrProgCounter+1;

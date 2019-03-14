@@ -28,8 +28,8 @@ module Timer(
     inout       [7:0]   BUS_DATA,
     input       [7:0]   BUS_ADDR,
     input               BUS_WE,
-    output              BUS_INTERRUPT_RAISE,
-    input               BUS_INTERRUPT_ACK    
+    input               BUS_INTERRUPT_ACK,
+    output              BUS_INTERRUPT_RAISE
     );
     
     parameter [7:0] TimerBaseAddr = 8'hF0;  // Timer Base Address in the Memory Map
@@ -64,13 +64,13 @@ module Timer(
             InterruptEnable <= BUS_DATA[0];        
     end
     
-    // First we must lower the clock speed from 50MHz to 1KHz (1ms period)
+    // First we must lower the clock speed from 100MHz to 100Hz (10ms period)
     reg [31:0] DownCounter;
     always@(posedge CLK) begin
         if(RESET)
             DownCounter <= 0;
         else begin
-            if(DownCounter == 32'd49999)
+            if(DownCounter == 32'd99999)
                 DownCounter <= 0;
             else
                 DownCounter <= DownCounter + 1'b1;
