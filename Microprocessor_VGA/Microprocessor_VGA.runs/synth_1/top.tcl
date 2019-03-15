@@ -4,7 +4,6 @@
 
 set_param xicom.use_bs_reader 1
 debug::add_scope template.lib 1
-set_msg_config -id {Common-41} -limit 4294967295
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
 create_project -in_memory -part xc7a35tcpg236-1
@@ -18,6 +17,7 @@ set_property target_language Verilog [current_project]
 read_mem {
   /home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/ROM.mem
   /home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/RAM.mem
+  /home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/test_rom.mem
 }
 read_verilog -library xil_defaultlib {
   /home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/Generic_Counter.v

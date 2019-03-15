@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.2 (lin64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date         : Thu Mar 14 20:59:54 2019
-| Host         : tlf08.see.ed.ac.uk running 64-bit Scientific Linux release 7.5 (Nitrogen)
+| Date         : Fri Mar 15 19:51:22 2019
+| Host         : tlf38.see.ed.ac.uk running 64-bit Scientific Linux release 7.5 (Nitrogen)
 | Command      : report_timing_summary -warn_on_violation -max_paths 10 -file top_timing_summary_routed.rpt -rpx top_timing_summary_routed.rpx
 | Design       : top
 | Device       : 7a35t-cpg236
@@ -50,7 +50,7 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 269 register/latch pins with no clock driven by root clock pin: CLK (HIGH)
+ There are 273 register/latch pins with no clock driven by root clock pin: CLK (HIGH)
 
  There is 1 register/latch pin with no clock driven by root clock pin: vga/vga/Bit2Counter/TRIGGER_OUT_reg/C (HIGH)
 
@@ -67,7 +67,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 723 pins that are not constrained for maximum delay. (HIGH)
+ There are 742 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 

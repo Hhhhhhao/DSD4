@@ -33,12 +33,12 @@ module top_tb(
     
     initial begin
         CLK = 0;
-        forever #10 CLK <= ~CLK;
+        forever #1 CLK <= ~CLK;
     end
     
     initial begin
         RESET = 1;
-        #20 RESET = 0;
+        #2 RESET = 0;
     end
     
     // Instantiate top module 

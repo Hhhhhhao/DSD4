@@ -2,8 +2,8 @@
 # Vivado v2015.2 (64-bit)
 # SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
 # IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
-# Start of session at: Thu Mar 14 20:58:50 2019
-# Process ID: 3521
+# Start of session at: Fri Mar 15 19:50:08 2019
+# Process ID: 21340
 # Log file: /home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.runs/synth_1/top.vds
 # Journal file: /home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
@@ -12,11 +12,11 @@ Command: synth_design -top top -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
-INFO: [Common 17-1223] The version limit for your license is '2015.12' and will expire in -1169 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [Common 17-1223] The version limit for your license is '2015.12' and will expire in -1170 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
 WARNING: [Synth 8-2292] literal value truncated to fit in 4 bits [/home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/ALU.v:67]
 WARNING: [Synth 8-2292] literal value truncated to fit in 4 bits [/home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/ALU.v:69]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1063.508 ; gain = 163.551 ; free physical = 16889 ; free virtual = 90740
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1063.500 ; gain = 163.551 ; free physical = 1170 ; free virtual = 89333
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top' [/home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/top.v:23]
 INFO: [Synth 8-638] synthesizing module 'Timer' [/home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/Timer.v:23]
@@ -41,8 +41,11 @@ INFO: [Synth 8-638] synthesizing module 'Processor' [/home/s1786991/DSD/DSD4/Mic
 	Parameter DO_MATHS_OPP_SAVE_IN_A bound to: 8'b00110000 
 	Parameter DO_MATHS_OPP_SAVE_IN_B bound to: 8'b00110001 
 	Parameter DO_MATHS_OPP_0 bound to: 8'b00110010 
-	Parameter IF_A_EQUALITY_B_GOTO bound to: 8'b01000000 
-	Parameter GOTO bound to: 8'b01010000 
+	Parameter IF_A_EQUALITY_B_GOTO_0 bound to: 8'b01000000 
+	Parameter IF_A_EQUALITY_B_GOTO_1 bound to: 8'b01000001 
+	Parameter GOTO_0 bound to: 8'b01010000 
+	Parameter GOTO_1 bound to: 8'b01010001 
+	Parameter GOTO_2 bound to: 8'b01010010 
 	Parameter FUNCTION_START bound to: 8'b01100000 
 	Parameter RETURN bound to: 8'b01100001 
 	Parameter DE_REFERENCE_A bound to: 8'b01110000 
@@ -95,7 +98,7 @@ INFO: [Synth 8-256] done synthesizing module 'VGA_Sig_Gen' (8#1) [/home/s1786991
 INFO: [Synth 8-256] done synthesizing module 'VGA' (9#1) [/home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/VGA.v:23]
 INFO: [Synth 8-256] done synthesizing module 'top' (10#1) [/home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/top.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1087.773 ; gain = 187.816 ; free physical = 16865 ; free virtual = 90716
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1087.766 ; gain = 187.816 ; free physical = 1146 ; free virtual = 89309
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -106,7 +109,7 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 WARNING: [Synth 8-3295] tying undriven pin micro_processor:BUS_INTERRUPTS_RAISE[0] to constant 0 [/home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/top.v:57]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1087.773 ; gain = 187.816 ; free physical = 16865 ; free virtual = 90717
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1087.766 ; gain = 187.816 ; free physical = 1145 ; free virtual = 89308
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -120,22 +123,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1414.828 ; gain = 0.000 ; free physical = 16607 ; free virtual = 90459
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1414.820 ; gain = 0.000 ; free physical = 982 ; free virtual = 89145
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16605 ; free virtual = 90457
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 981 ; free virtual = 89144
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16605 ; free virtual = 90457
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 981 ; free virtual = 89144
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16605 ; free virtual = 90457
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 981 ; free virtual = 89144
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "DownCounter" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 INFO: [Synth 8-5545] ROM "Timer" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
@@ -146,7 +149,7 @@ INFO: [Synth 8-5546] ROM "NextState" won't be mapped to RAM because it is too sp
 ROM size is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5546] ROM "NextProgCounterOffset" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "NextBusDataOut" won't be mapped to RAM because it is too sparse
-ROM size is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "NextRegSelect" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "NextProgContext" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "NextState" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "NextState" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -166,22 +169,25 @@ INFO: [Synth 8-5546] ROM "ROM" won't be mapped to RAM because it is too sparse
   DO_MATHS_OPP_SAVE_IN_A |                            01000 |                         00110000
   DO_MATHS_OPP_SAVE_IN_B |                            01001 |                         00110001
           DO_MATHS_OPP_0 |                            01010 |                         00110010
-    IF_A_EQUALITY_B_GOTO |                            01011 |                         01000000
-                    IDLE |                            01100 |                         11110000
- GET_THREAD_START_ADDR_0 |                            01101 |                         11110001
- GET_THREAD_START_ADDR_1 |                            01110 |                         11110010
- GET_THREAD_START_ADDR_2 |                            01111 |                         11110011
-          FUNCTION_START |                            10000 |                         01100000
-                    GOTO |                            10001 |                         01010000
-                  RETURN |                            10010 |                         01100001
-          DE_REFERENCE_A |                            10011 |                         01110000
-          DE_REFERENCE_B |                            10100 |                         01110001
-         READ_FROM_MEM_2 |                            10101 |                         00010100
+  IF_A_EQUALITY_B_GOTO_0 |                            01011 |                         01000000
+  IF_A_EQUALITY_B_GOTO_1 |                            01100 |                         01000001
+                    IDLE |                            01101 |                         11110000
+ GET_THREAD_START_ADDR_0 |                            01110 |                         11110001
+ GET_THREAD_START_ADDR_1 |                            01111 |                         11110010
+ GET_THREAD_START_ADDR_2 |                            10000 |                         11110011
+          FUNCTION_START |                            10001 |                         01100000
+                  GOTO_0 |                            10010 |                         01010000
+                  GOTO_1 |                            10011 |                         01010001
+                  GOTO_2 |                            10100 |                         01010010
+                  RETURN |                            10101 |                         01100001
+          DE_REFERENCE_A |                            10110 |                         01110000
+          DE_REFERENCE_B |                            10111 |                         01110001
+         READ_FROM_MEM_2 |                            11000 |                         00010100
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'CurrState_reg' using encoding 'sequential' in module 'Processor'
 INFO: [Synth 8-5562] The signal Mem_reg is implemented as block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The *depth (7 address bits)* is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16601 ; free virtual = 90453
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 965 ; free virtual = 89129
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -203,11 +209,11 @@ Detailed RTL Component Info :
 +---Registers : 
 	               32 Bit    Registers := 2     
 	               16 Bit    Registers := 2     
-	               15 Bit    Registers := 1     
 	               12 Bit    Registers := 1     
 	               10 Bit    Registers := 1     
 	                9 Bit    Registers := 1     
-	                8 Bit    Registers := 11    
+	                8 Bit    Registers := 12    
+	                7 Bit    Registers := 1     
 	                2 Bit    Registers := 3     
 	                1 Bit    Registers := 15    
 +---RAMs : 
@@ -215,20 +221,19 @@ Detailed RTL Component Info :
 	             1024 Bit         RAMs := 1     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
 	  11 Input      8 Bit        Muxes := 3     
 	   6 Input      8 Bit        Muxes := 1     
 	   3 Input      8 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 3     
-	  22 Input      8 Bit        Muxes := 4     
-	  41 Input      8 Bit        Muxes := 1     
-	  38 Input      5 Bit        Muxes := 1     
+	  25 Input      8 Bit        Muxes := 4     
+	 257 Input      8 Bit        Muxes := 1     
+	  41 Input      5 Bit        Muxes := 1     
 	  11 Input      3 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 1     
-	  22 Input      2 Bit        Muxes := 1     
+	  25 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 6     
-	  22 Input      1 Bit        Muxes := 9     
+	  25 Input      1 Bit        Muxes := 9     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -267,11 +272,11 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   3 Input      8 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 2     
-	  22 Input      8 Bit        Muxes := 4     
-	  38 Input      5 Bit        Muxes := 1     
+	  25 Input      8 Bit        Muxes := 4     
+	  41 Input      5 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 1     
-	  22 Input      2 Bit        Muxes := 1     
-	  22 Input      1 Bit        Muxes := 9     
+	  25 Input      2 Bit        Muxes := 1     
+	  25 Input      1 Bit        Muxes := 9     
 Module RAM 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -284,7 +289,7 @@ Detailed RTL Component Info :
 +---Registers : 
 	                8 Bit    Registers := 1     
 +---Muxes : 
-	  41 Input      8 Bit        Muxes := 1     
+	 257 Input      8 Bit        Muxes := 1     
 Module Frame_Buffer 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -328,11 +333,10 @@ Module VGA
 Detailed RTL Component Info : 
 +---Registers : 
 	               16 Bit    Registers := 1     
-	               15 Bit    Registers := 1     
 	               12 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     15 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -345,7 +349,7 @@ BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16601 ; free virtual = 90453
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 965 ; free virtual = 89129
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -353,9 +357,9 @@ INFO: [Synth 8-5545] ROM "timer/DownCounter" won't be mapped to RAM because addr
 INFO: [Synth 8-5545] ROM "timer/Timer" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 INFO: [Synth 8-5546] ROM "timer/TransmitTimerValue" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16604 ; free virtual = 90455
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 968 ; free virtual = 89131
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16604 ; free virtual = 90455
+Finished Parallel Reinference  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 968 ; free virtual = 89131
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -380,10 +384,6 @@ Note: The table shows the Block RAMs at the current stage of the synthesis flow.
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\vga/COLOUR_OUT_reg[11] )
-WARNING: [Synth 8-3332] Sequential element (\micro_processor/CurrProgCounter_reg[7] ) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (\micro_processor/CurrProgCounter_reg[6] ) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (\micro_processor/CurrProgContext_reg[7] ) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (\micro_processor/CurrProgContext_reg[6] ) is unused and will be removed from module top.
 WARNING: [Synth 8-3332] Sequential element (\micro_processor/CurrInterruptAck_reg[0] ) is unused and will be removed from module top.
 WARNING: [Synth 8-3332] Sequential element (\vga/COLOUR_OUT_reg[11] ) is unused and will be removed from module top.
 WARNING: [Synth 8-3332] Sequential element (\micro_processor/CurrProgCounterOffset_reg[1] ) is unused and will be removed from module top.
@@ -394,16 +394,16 @@ WARNING: [Synth 8-3332] Sequential element (\vga/COLOUR_OUT_reg[10] ) is unused 
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16603 ; free virtual = 90454
+Finished Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 952 ; free virtual = 89115
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16603 ; free virtual = 90454
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 952 ; free virtual = 89115
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16603 ; free virtual = 90454
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 952 ; free virtual = 89115
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
@@ -411,10 +411,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16600 ; free virtual = 90452
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 892 ; free virtual = 89055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16600 ; free virtual = 90452
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 892 ; free virtual = 89055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -428,7 +428,7 @@ Start Technology Mapping
 INFO: [Synth 8-4480] The timing for the instance \ram/Mem_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance \vga/frame_buffer/Mem_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16588 ; free virtual = 90439
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 868 ; free virtual = 89032
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -446,7 +446,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16586 ; free virtual = 90438
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 868 ; free virtual = 89032
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -459,7 +459,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16586 ; free virtual = 90438
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 868 ; free virtual = 89032
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -471,13 +471,13 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16586 ; free virtual = 90438
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 868 ; free virtual = 89032
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16586 ; free virtual = 90438
+Start Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 868 ; free virtual = 89032
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16586 ; free virtual = 90438
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 868 ; free virtual = 89032
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -496,15 +496,15 @@ Report Cell Usage:
 |1     |BUFG     |     1|
 |2     |CARRY4   |    35|
 |3     |LUT1     |   100|
-|4     |LUT2     |    69|
-|5     |LUT3     |    33|
+|4     |LUT2     |    68|
+|5     |LUT3     |    38|
 |6     |LUT4     |    36|
-|7     |LUT5     |    49|
-|8     |LUT6     |   151|
-|9     |MUXF7    |     7|
+|7     |LUT5     |    36|
+|8     |LUT6     |   174|
+|9     |MUXF7    |    16|
 |10    |RAMB18E1 |     1|
 |11    |RAMB36E1 |     1|
-|12    |FDRE     |   255|
+|12    |FDRE     |   259|
 |13    |FDSE     |    12|
 |14    |IBUF     |     2|
 |15    |OBUF     |    14|
@@ -514,25 +514,25 @@ Report Instance Areas:
 +------+--------------------+--------------------------------+------+
 |      |Instance            |Module                          |Cells |
 +------+--------------------+--------------------------------+------+
-|1     |top                 |                                |   766|
-|2     |  micro_processor   |Processor                       |   222|
-|3     |    ALU0            |ALU                             |    38|
-|4     |  ram               |RAM                             |    34|
+|1     |top                 |                                |   793|
+|2     |  micro_processor   |Processor                       |   248|
+|3     |    ALU0            |ALU                             |    44|
+|4     |  ram               |RAM                             |    26|
 |5     |  rom               |ROM                             |    69|
-|6     |  timer             |Timer                           |   285|
-|7     |  vga               |VGA                             |   135|
+|6     |  timer             |Timer                           |   286|
+|7     |  vga               |VGA                             |   143|
 |8     |    frame_buffer    |Frame_Buffer                    |     1|
-|9     |    vga             |VGA_Sig_Gen                     |    94|
+|9     |    vga             |VGA_Sig_Gen                     |   102|
 |10    |      Bit2Counter   |Generic_Counter                 |     6|
 |11    |      HonSynCounter |Generic_Counter__parameterized0 |    31|
 |12    |      VerSynCounter |Generic_Counter__parameterized1 |    23|
 +------+--------------------+--------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16586 ; free virtual = 90437
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 868 ; free virtual = 89032
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1414.828 ; gain = 71.297 ; free physical = 16586 ; free virtual = 90437
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1414.828 ; gain = 514.871 ; free physical = 16586 ; free virtual = 90437
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1414.820 ; gain = 71.297 ; free physical = 868 ; free virtual = 89031
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1414.820 ; gain = 514.871 ; free physical = 868 ; free virtual = 89031
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 39 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -542,8 +542,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-60 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+61 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1427.836 ; gain = 419.359 ; free physical = 16586 ; free virtual = 90437
-report_utilization: Time (s): cpu = 00:00:00.70 ; elapsed = 00:00:00.73 . Memory (MB): peak = 1459.859 ; gain = 0.000 ; free physical = 16584 ; free virtual = 90436
-INFO: [Common 17-206] Exiting Vivado at Thu Mar 14 20:59:14 2019...
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1428.828 ; gain = 420.359 ; free physical = 868 ; free virtual = 89031
+report_utilization: Time (s): cpu = 00:00:00.70 ; elapsed = 00:00:00.73 . Memory (MB): peak = 1460.852 ; gain = 0.000 ; free physical = 866 ; free virtual = 89029
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 15 19:50:33 2019...

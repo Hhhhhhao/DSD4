@@ -134,10 +134,13 @@ module Processor(
     DO_MATHS_OPP_0          = 8'h32, // wait for new op address to settle, end op
 
     // IN/Equality
-    IF_A_EQUALITY_B_GOTO    = 8'h40,
+    IF_A_EQUALITY_B_GOTO_0  = 8'h40,
+    IF_A_EQUALITY_B_GOTO_1  = 8'h41,
     
     // Goto Addr
-    GOTO                    = 8'h50,
+    GOTO_0                  = 8'h50,
+    GOTO_1                  = 8'h51,
+    GOTO_2                  = 8'h52,
     
     // Function Call & Return
     FUNCTION_START          = 8'h60,
@@ -246,8 +249,8 @@ module Processor(
                     4'h3: NextState     = WRITE_TO_MEM_FROM_B;
                     4'h4: NextState     = DO_MATHS_OPP_SAVE_IN_A;
                     4'h5: NextState     = DO_MATHS_OPP_SAVE_IN_B;
-                    4'h6: NextState     = IF_A_EQUALITY_B_GOTO;
-                    4'h7: NextState     = GOTO;
+                    4'h6: NextState     = IF_A_EQUALITY_B_GOTO_0;
+                    4'h7: NextState     = GOTO_0;
                     4'h8: NextState     = IDLE;
                     4'h9: NextState     = FUNCTION_START;
                     4'hA: NextState     = RETURN;
@@ -364,23 +367,35 @@ function, and Dereference operations.*/
 
             ////////////////////////////////////////////////////////////////
             // In/Equality: if condition is satisfied, goto address
-            IF_A_EQUALITY_B_GOTO: begin
+            IF_A_EQUALITY_B_GOTO_0: begin
                 if(ALU_OUT) begin
-                    NextState       = GOTO;                   
+                    NextState       = GOTO_0;                   
                     NextProgCounter =  CurrProgCounter+1;
                 end
                 else begin
-                    NextState       = CHOOSE_OPP;
+                    NextState       = IF_A_EQUALITY_B_GOTO_1;
                     NextProgCounter =  CurrProgCounter+2;
                 end
             end
             
+            IF_A_EQUALITY_B_GOTO_1: begin
+                NextState = CHOOSE_OPP;
+            end
             
             ///////////////////////////////////////////////////////////////
-            // GOTO Logic
-            GOTO: begin
-                NextState       = CHOOSE_OPP;
+            // GOTO Logic; wait for the next memory to be read
+            GOTO_0: begin
+                NextState       = GOTO_1;
+
+            end
+            
+            GOTO_1: begin
+                NextState       = GOTO_2;
                 NextProgCounter =  ProgMemoryOut;
+            end
+            
+            GOTO_2: begin
+                NextState       = CHOOSE_OPP;
             end
             
             
@@ -388,7 +403,7 @@ function, and Dereference operations.*/
             // Function Call & Return
             // Function Start
             FUNCTION_START: begin
-                NextState       = GOTO;
+                NextState       = GOTO_0;
                 NextProgContext =  CurrProgCounter+1;
                 NextProgCounter =  ProgMemoryOut;
             end

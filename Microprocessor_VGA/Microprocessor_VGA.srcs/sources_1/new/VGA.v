@@ -103,9 +103,16 @@ module VGA(
     // at VGA base address + 2, 0XB2, set Y address
     always@(posedge CLK) begin
         if(RESET)
-            FB_ADDR <= 0;
+            FB_ADDR[7:0] <= 0;
         else if ((BUS_ADDR == VGABaseAddr + 8'h01)&BUS_WE) begin
             FB_ADDR[7:0] <= BUS_DATA;
+         end
+    end
+    
+    always@(posedge CLK) begin
+        if(RESET) begin
+            FB_DATA_IN <= 0;
+            FB_ADDR[14:8] <= 0;
         end
         else if ((BUS_ADDR == VGABaseAddr + 8'h02)&BUS_WE) begin
             FB_ADDR[14:8] <= BUS_DATA[6:0];
