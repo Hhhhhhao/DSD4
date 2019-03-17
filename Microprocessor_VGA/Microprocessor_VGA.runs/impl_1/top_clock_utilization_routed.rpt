@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2015.2 (lin64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date              : Fri Mar 15 19:51:27 2019
-| Host              : tlf38.see.ed.ac.uk running 64-bit Scientific Linux release 7.5 (Nitrogen)
+| Date              : Sun Mar 17 18:32:55 2019
+| Host              : tlf08.see.ed.ac.uk running 64-bit Scientific Linux release 7.5 (Nitrogen)
 | Command           : report_clock_utilization -file top_clock_utilization_routed.rpt
 | Design            : top
 | Device            : 7a35t-cpg236
@@ -47,7 +47,7 @@ Table of Contents
 +-------+--------------------+---------------+------+-------+-------+
 | Index | BUFG Cell          | Net Name      | BELs | Sites | Fixed |
 +-------+--------------------+---------------+------+-------+-------+
-|     1 | CLK_IBUF_BUFG_inst | CLK_IBUF_BUFG |  273 |    98 |    no |
+|     1 | CLK_IBUF_BUFG_inst | CLK_IBUF_BUFG |  273 |    97 |    no |
 +-------+--------------------+---------------+------+-------+-------+
 
 

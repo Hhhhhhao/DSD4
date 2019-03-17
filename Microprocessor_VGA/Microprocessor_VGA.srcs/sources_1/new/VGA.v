@@ -101,26 +101,55 @@ module VGA(
     // at VGA base address + 1, 0XB1, set X address
     
     // at VGA base address + 2, 0XB2, set Y address
-    always@(posedge CLK) begin
-        if(RESET)
-            FB_ADDR[7:0] <= 0;
-        else if ((BUS_ADDR == VGABaseAddr + 8'h01)&BUS_WE) begin
-            FB_ADDR[7:0] <= BUS_DATA;
-         end
-    end
+//    always@(posedge CLK) begin
+//        if(RESET) begin
+//            // FB_DATA_IN <= 0;
+//            FB_ADDR <= 0;
+//        end
+//        else if ((BUS_ADDR == VGABaseAddr + 8'h01)&BUS_WE) begin
+//            FB_ADDR[7:0] <= BUS_DATA;
+//        end
+//        else if ((BUS_ADDR == VGABaseAddr + 8'h02)&BUS_WE) begin
+//            FB_ADDR[14:8] <= BUS_DATA[6:0];
+//            // FB_DATA_IN <= BUS_DATA[7];
+//        end        
+//    end
+    
     
     always@(posedge CLK) begin
         if(RESET) begin
-            FB_DATA_IN <= 0;
+            FB_ADDR[7:0] <= 0;
+        end
+        else if ((BUS_ADDR == VGABaseAddr + 8'h01)&BUS_WE) begin
+            FB_ADDR[7:0] <= BUS_DATA;
+        end
+    end
+
+    always@(posedge CLK) begin
+        if(RESET) begin
             FB_ADDR[14:8] <= 0;
         end
         else if ((BUS_ADDR == VGABaseAddr + 8'h02)&BUS_WE) begin
             FB_ADDR[14:8] <= BUS_DATA[6:0];
-            FB_DATA_IN <= BUS_DATA[7];
         end
     end
-
-
     
+    always@(posedge CLK) begin
+        if (RESET)
+            FB_DATA_IN <= 0;
+        else if ((BUS_WE) & ((BUS_ADDR == VGABaseAddr + 8'h01) | (BUS_ADDR == VGABaseAddr + 8'h02)))
+            FB_DATA_IN <= 1;
+    end
+    
+//    always@(posedge CLK) begin
+//        if (RESET)
+//            FB_DATA_IN <= 0;
+//        else if ((BUS_ADDR == VGABaseAddr + 8'h01)&BUS_WE) begin
+//            FB_DATA_IN <= 1;
+//        end
+//        else if ((BUS_ADDR == VGABaseAddr + 8'h02)&BUS_WE) begin
+//            FB_DATA_IN <= BUS_DATA[7];
+//        end
+//    end    
     
 endmodule
