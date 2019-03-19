@@ -149,7 +149,8 @@ module Processor(
     
     // Dereference Operations
     DE_REFERENCE_A          = 8'h70,
-    DE_REFERENCE_B          = 8'h71;
+    DE_REFERENCE_B          = 8'h71,
+    DE_REFERENCE_0          = 8'h72;
    
      
     // Sequential part of the State Machine
@@ -418,21 +419,25 @@ function, and Dereference operations.*/
             ///////////////////////////////////////////////////////////////
             // DEREFERENCE OPERATIONS
             DE_REFERENCE_A: begin
-                NextState       = READ_FROM_MEM_2;
+                NextState       = DE_REFERENCE_0;
                 NextBusAddr     =  CurrRegA;
                 NextRegSelect   =  1'b0;
-                NextProgCounter =  CurrProgCounter+1;
-                 
+                // NextProgCounter =  CurrProgCounter+1;
             end
             
             DE_REFERENCE_B: begin
-                NextState       = READ_FROM_MEM_2;
+                NextState       = DE_REFERENCE_0;
                 NextBusAddr     =  CurrRegB;
                 NextRegSelect   =  1'b1;
-                NextProgCounter =  CurrProgCounter+1;
+                // NextProgCounter =  CurrProgCounter+1;
              
             end
 
+            DE_REFERENCE_0: begin
+                NextState       = READ_FROM_MEM_2;
+                NextProgCounter =  CurrProgCounter+1;
+            end
+            
             default: begin
                 NextState = CurrState;
             end

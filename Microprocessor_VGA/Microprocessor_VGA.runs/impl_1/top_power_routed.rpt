@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.2 (lin64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date             : Sun Mar 17 18:32:53 2019
-| Host             : tlf08.see.ed.ac.uk running 64-bit Scientific Linux release 7.5 (Nitrogen)
+| Date             : Tue Mar 19 09:38:47 2019
+| Host             : tla12.see.ed.ac.uk running 64-bit Scientific Linux release 7.5 (Nitrogen)
 | Command          : 
 | Design           : top
 | Device           : xc7a35tcpg236-1
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 27.979 (Junction temp exceeded!) |
-| Dynamic (W)              | 27.491                           |
+| Total On-Chip Power (W)  | 28.145 (Junction temp exceeded!) |
+| Dynamic (W)              | 27.656                           |
 | Device Static (W)        | 0.489                            |
 | Effective TJA (C/W)      | 5.0                              |
 | Max Ambient (C)          | 0.0                              |
@@ -49,18 +49,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     1.611 |      710 |       --- |             --- |
-|   LUT as Logic |     1.446 |      307 |     20800 |            1.48 |
-|   CARRY4       |     0.074 |       35 |      8150 |            0.43 |
-|   Register     |     0.067 |      271 |     41600 |            0.65 |
-|   F7/F8 Muxes  |     0.018 |       16 |     32600 |            0.05 |
+| Slice Logic    |     1.690 |      719 |       --- |             --- |
+|   LUT as Logic |     1.528 |      314 |     20800 |            1.51 |
+|   CARRY4       |     0.073 |       35 |      8150 |            0.43 |
+|   Register     |     0.064 |      271 |     41600 |            0.65 |
+|   F7/F8 Muxes  |     0.018 |       17 |     32600 |            0.05 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       20 |       --- |             --- |
-| Signals        |     1.654 |      577 |       --- |             --- |
-| Block RAM      |     0.594 |      1.5 |        50 |            3.00 |
-| I/O            |    23.632 |       16 |       106 |           15.09 |
+| Signals        |     1.740 |      587 |       --- |             --- |
+| Block RAM      |     0.593 |      1.5 |        50 |            3.00 |
+| I/O            |    23.634 |       16 |       106 |           15.09 |
 | Static Power   |     0.489 |          |           |                 |
-| Total          |    27.979 |          |           |                 |
+| Total          |    28.145 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,7 +70,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     4.160 |       3.818 |      0.342 |
+| Vccint    |       1.000 |     4.324 |       3.982 |      0.342 |
 | Vccaux    |       1.800 |     0.919 |       0.866 |      0.053 |
 | Vcco33    |       3.300 |     6.689 |       6.688 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -137,17 +137,17 @@ Table of Contents
 +---------------------+-----------+
 | Name                | Power (W) |
 +---------------------+-----------+
-| top                 |    27.491 |
-|   micro_processor   |     1.688 |
-|     ALU0            |     0.401 |
-|   ram               |     0.280 |
-|   rom               |     0.482 |
-|   timer             |     0.468 |
-|   vga               |     0.912 |
-|     frame_buffer    |     0.540 |
-|     vga             |     0.219 |
-|       Bit2Counter   |     0.068 |
-|       HonSynCounter |     0.051 |
+| top                 |    27.656 |
+|   micro_processor   |     1.914 |
+|     ALU0            |     0.395 |
+|   ram               |     0.274 |
+|   rom               |     0.478 |
+|   timer             |     0.464 |
+|   vga               |     0.860 |
+|     frame_buffer    |     0.538 |
+|     vga             |     0.194 |
+|       Bit2Counter   |     0.064 |
+|       HonSynCounter |     0.047 |
 |       VerSynCounter |    <0.001 |
 +---------------------+-----------+
 
