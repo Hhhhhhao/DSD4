@@ -35,7 +35,7 @@ module ROM(
     
     // Load program
     initial $display("Loading ROM.");
-    initial $readmemh("/home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/ROM.mem", ROM);
+    initial $readmemh("/home/s1786991/DSD/DSD4/Microprocessor_VGA/Microprocessor_VGA.srcs/sources_1/new/test_rom.mem", ROM);
     
     // single port rom
     always@(posedge CLK)

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="ProcessorSim_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="ProcessorSim" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="25" />
+   <wvobject db_ref_id="1" type="logic" fp_name="/ProcessorSim/CLK">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/ProcessorSim/RESET">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/BUS_DATA">
+      <obj_property name="ElementShortName">BUS_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">BUS_DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/BUS_ADDR">
+      <obj_property name="ElementShortName">BUS_ADDR[7:0]</obj_property>
+      <obj_property name="ObjectShortName">BUS_ADDR[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/ProcessorSim/BUS_WE">
+      <obj_property name="ElementShortName">BUS_WE</obj_property>
+      <obj_property name="ObjectShortName">BUS_WE</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/ROM_ADDRESS">
+      <obj_property name="ElementShortName">ROM_ADDRESS[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ROM_ADDRESS[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/ROM_DATA">
+      <obj_property name="ElementShortName">ROM_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ROM_DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/BUS_INTERRUPTS_RAISE">
+      <obj_property name="ElementShortName">BUS_INTERRUPTS_RAISE[1:0]</obj_property>
+      <obj_property name="ObjectShortName">BUS_INTERRUPTS_RAISE[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/BUS_INTERRUPTS_ACK">
+      <obj_property name="ElementShortName">BUS_INTERRUPTS_ACK[1:0]</obj_property>
+      <obj_property name="ObjectShortName">BUS_INTERRUPTS_ACK[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/TB/CurrRegA">
+      <obj_property name="ElementShortName">CurrRegA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">CurrRegA[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/TB/CurrRegB">
+      <obj_property name="ElementShortName">CurrRegB[7:0]</obj_property>
+      <obj_property name="ObjectShortName">CurrRegB[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/TB/AluOut">
+      <obj_property name="ElementShortName">AluOut[7:0]</obj_property>
+      <obj_property name="ObjectShortName">AluOut[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/TB/CurrState">
+      <obj_property name="ElementShortName">CurrState[7:0]</obj_property>
+      <obj_property name="ObjectShortName">CurrState[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/TB/CurrProgCounter">
+      <obj_property name="ElementShortName">CurrProgCounter[7:0]</obj_property>
+      <obj_property name="ObjectShortName">CurrProgCounter[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/TB/BusDataIn">
+      <obj_property name="ElementShortName">BusDataIn[7:0]</obj_property>
+      <obj_property name="ObjectShortName">BusDataIn[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/RAM/BufferedBusData">
+      <obj_property name="ElementShortName">BufferedBusData[7:0]</obj_property>
+      <obj_property name="ObjectShortName">BufferedBusData[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/ProcessorSim/RAM/RAMBusWE">
+      <obj_property name="ElementShortName">RAMBusWE</obj_property>
+      <obj_property name="ObjectShortName">RAMBusWE</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/TB/ProgMemoryOut">
+      <obj_property name="ElementShortName">ProgMemoryOut[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ProgMemoryOut[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/RAM/Out">
+      <obj_property name="ElementShortName">Out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Out[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/RAM/Mem[94]">
+      <obj_property name="ElementShortName">[94][7:0]</obj_property>
+      <obj_property name="ObjectShortName">Mem[94][7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/RAM/Mem[95]">
+      <obj_property name="ElementShortName">[95][7:0]</obj_property>
+      <obj_property name="ObjectShortName">Mem[95][7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/RAM/Mem[110]">
+      <obj_property name="ElementShortName">[110][7:0]</obj_property>
+      <obj_property name="ObjectShortName">Mem[110][7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/RAM/Mem[111]">
+      <obj_property name="ElementShortName">[111][7:0]</obj_property>
+      <obj_property name="ObjectShortName">Mem[111][7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/RAM/Mem">
+      <obj_property name="ElementShortName">Mem[127:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">Mem[127:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ProcessorSim/TB/CurrProgContext">
+      <obj_property name="ElementShortName">CurrProgContext[7:0]</obj_property>
+      <obj_property name="ObjectShortName">CurrProgContext[7:0]</obj_property>
+   </wvobject>
+</wave_config>

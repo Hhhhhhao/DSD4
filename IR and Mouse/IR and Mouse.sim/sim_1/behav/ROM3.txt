@@ -1,0 +1,43 @@
+00  // BEGIN MOUSE - Read Mouse Status into A
+A0
+02  // Store Mouse Status into LEDs
+C0
+00  // Read Mouse X into A
+A1
+01  // Read Mouse Y into B
+A2
+02  // Write Mouse X into 7-Seg
+D1
+03  // Write Mouse Y into 7-Seg
+D0
+01  // Initial x-grid value
+08
+03  // Store 8 to 1A
+1A
+00  // Read x from mouse
+A1
+01  // Read first boundary 32 (50) to B
+32
+B6  // Branch to 22 if less than 50
+22
+01  // Read second x-grid to B
+00
+03  // Store 0 to 1A
+1A
+01  // Read second boundary 6E (110) to B
+6E
+B6  // Branch to 22 if less than 110
+22
+01  // Read third x-grid to B
+04
+03  // Store 4 in 1A
+1A
+01  // ADDRESS 22
+1A
+03
+C1
+08
+
+@FE
+16
+00

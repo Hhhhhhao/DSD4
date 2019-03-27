@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="wrapper_sim_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="wrapper_sim" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="15" />
+   <wvobject db_ref_id="1" type="logic" fp_name="/wrapper_sim/CLK">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/wrapper_sim/RESET">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/wrapper_sim/SEG_SELECT_OUT">
+      <obj_property name="ElementShortName">SEG_SELECT_OUT[3:0]</obj_property>
+      <obj_property name="ObjectShortName">SEG_SELECT_OUT[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/wrapper_sim/HEX_OUT">
+      <obj_property name="ElementShortName">HEX_OUT[7:0]</obj_property>
+      <obj_property name="ObjectShortName">HEX_OUT[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/wrapper_sim/LED_OUT">
+      <obj_property name="ElementShortName">LED_OUT[15:0]</obj_property>
+      <obj_property name="ObjectShortName">LED_OUT[15:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/wrapper_sim/IR_LED">
+      <obj_property name="ElementShortName">IR_LED</obj_property>
+      <obj_property name="ObjectShortName">IR_LED</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/wrapper_sim/VGA_HS">
+      <obj_property name="ElementShortName">VGA_HS</obj_property>
+      <obj_property name="ObjectShortName">VGA_HS</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/wrapper_sim/VGA_VS">
+      <obj_property name="ElementShortName">VGA_VS</obj_property>
+      <obj_property name="ObjectShortName">VGA_VS</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/wrapper_sim/COLOUR_OUT">
+      <obj_property name="ElementShortName">COLOUR_OUT[11:0]</obj_property>
+      <obj_property name="ObjectShortName">COLOUR_OUT[11:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/wrapper_sim/CLK_MOUSE">
+      <obj_property name="ElementShortName">CLK_MOUSE</obj_property>
+      <obj_property name="ObjectShortName">CLK_MOUSE</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/wrapper_sim/DATA_MOUSE">
+      <obj_property name="ElementShortName">DATA_MOUSE</obj_property>
+      <obj_property name="ObjectShortName">DATA_MOUSE</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/wrapper_sim/TB/MicroProcessor/CurrRegA">
+      <obj_property name="ElementShortName">CurrRegA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">CurrRegA[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/wrapper_sim/TB/MicroProcessor/CurrRegB">
+      <obj_property name="ElementShortName">CurrRegB[7:0]</obj_property>
+      <obj_property name="ObjectShortName">CurrRegB[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/wrapper_sim/TB/MicroProcessor/CurrProgCounter">
+      <obj_property name="ElementShortName">CurrProgCounter[7:0]</obj_property>
+      <obj_property name="ObjectShortName">CurrProgCounter[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/wrapper_sim/TB/MicroProcessor/CurrState">
+      <obj_property name="ElementShortName">CurrState[7:0]</obj_property>
+      <obj_property name="ObjectShortName">CurrState[7:0]</obj_property>
+   </wvobject>
+</wave_config>

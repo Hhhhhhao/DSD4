@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="20" />
+   <WVObjectSize size="15" />
    <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/CLK">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
@@ -39,14 +39,6 @@
       <obj_property name="ElementShortName">BUS_DATA[7:0]</obj_property>
       <obj_property name="ObjectShortName">BUS_DATA[7:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/BUS_INTERRUPTS_ACK">
-      <obj_property name="ElementShortName">BUS_INTERRUPTS_ACK[1:0]</obj_property>
-      <obj_property name="ObjectShortName">BUS_INTERRUPTS_ACK[1:0]</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/BUS_INTERRUPTS_RAISE">
-      <obj_property name="ElementShortName">BUS_INTERRUPTS_RAISE[1:0]</obj_property>
-      <obj_property name="ObjectShortName">BUS_INTERRUPTS_RAISE[1:0]</obj_property>
-   </wvobject>
    <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/uut/BUS_WE">
       <obj_property name="ElementShortName">BUS_WE</obj_property>
       <obj_property name="ObjectShortName">BUS_WE</obj_property>
@@ -69,31 +61,19 @@
    <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/micro_processor/CurrRegA">
       <obj_property name="ElementShortName">CurrRegA[7:0]</obj_property>
       <obj_property name="ObjectShortName">CurrRegA[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/micro_processor/CurrRegB">
       <obj_property name="ElementShortName">CurrRegB[7:0]</obj_property>
       <obj_property name="ObjectShortName">CurrRegB[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/uut/vga/frame_buffer/B_DATA">
-      <obj_property name="ElementShortName">B_DATA</obj_property>
-      <obj_property name="ObjectShortName">B_DATA</obj_property>
+   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/vga/FB_ADDR">
+      <obj_property name="ElementShortName">FB_ADDR[14:0]</obj_property>
+      <obj_property name="ObjectShortName">FB_ADDR[14:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/uut/vga/vga/VGA_DATA">
-      <obj_property name="ElementShortName">VGA_DATA</obj_property>
-      <obj_property name="ObjectShortName">VGA_DATA</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/uut/vga/frame_buffer/A_DATA_IN">
-      <obj_property name="ElementShortName">A_DATA_IN</obj_property>
-      <obj_property name="ObjectShortName">A_DATA_IN</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/vga/frame_buffer/A_ADDR">
-      <obj_property name="ElementShortName">A_ADDR[14:0]</obj_property>
-      <obj_property name="ObjectShortName">A_ADDR[14:0]</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/top_tb/uut/vga/frame_buffer/B_ADDR">
-      <obj_property name="ElementShortName">B_ADDR[14:0]</obj_property>
-      <obj_property name="ObjectShortName">B_ADDR[14:0]</obj_property>
+   <wvobject db_ref_id="1" type="logic" fp_name="/top_tb/uut/vga/FB_DATA_IN">
+      <obj_property name="ElementShortName">FB_DATA_IN</obj_property>
+      <obj_property name="ObjectShortName">FB_DATA_IN</obj_property>
    </wvobject>
 </wave_config>

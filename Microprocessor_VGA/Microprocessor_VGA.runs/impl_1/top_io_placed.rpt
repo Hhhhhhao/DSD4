@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.2 (lin64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date         : Tue Mar 19 09:38:31 2019
-| Host         : tla12.see.ed.ac.uk running 64-bit Scientific Linux release 7.5 (Nitrogen)
+| Date         : Mon Mar 25 18:57:14 2019
+| Host         : tlf27.see.ed.ac.uk running 64-bit Scientific Linux release 7.5 (Nitrogen)
 | Command      : report_io -file top_io_placed.rpt
 | Design       : top
 | Device       : xc7a35t

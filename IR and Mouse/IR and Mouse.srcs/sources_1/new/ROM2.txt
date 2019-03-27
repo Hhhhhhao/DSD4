@@ -1,0 +1,190 @@
+00      // Read 4A (F0)(RAM[0]) to A -- VGA initial colour
+4A
+02      // Write from A to VGA colour address
+B0
+00      // Read Mouse X into A
+A1
+01      // Read Mouse Y into B
+A2
+02      // Write initial mouse X to 7E
+7E
+03      // Write initial mouse Y to 7F
+7F
+00      // Read from 4D to A -- Y address
+4D
+01      // Read vertical boarder to B from 78 (120)
+78
+96      // if Y on Y boundary, go to line 33 -21
+21
+01      // Read X1 32 (50) to B
+32
+02      // Write from A to VGA V_ADDR
+B2
+03      // Write from B to VGA H_ADDR
+B1
+01      // Read 1 to B
+01
+03      // Write 1 to VGA_DATA
+B3
+54      // A+1 and save in A
+02      // write A to 4D
+4D
+07      // GOTO line 12
+0C
+00      // Read 0 to A
+00
+02      // write 0 to Y
+4D
+00      // Read Y address to A
+4D
+01      // Read vertical boarder to B from 78 (120)
+78
+96      // if Y on y boundary, go to line 58 -- 3A
+3A
+01      // Read 6E (120) to B
+6E
+02      // Write from A to VGA V_ADDR
+B2
+03      // Write from B to VGA H_ADDR
+B1
+01      // Read 1 to B
+01
+03      // Write 1 to VGA_DATA
+B3
+54      // A+1 and save in A
+02      // Write A to Y address
+4D
+07      // GOTO line 37 and repeat
+25
+00      // Read 0 into A
+00      
+02      // Write A(0) to Y address
+4D
+00      // Read from 4B (00) to A -- X address
+4B
+01      // Read h boarder to B from 4C (A0 -- 160)
+4C
+96      // if X on X boundary, go to line 83 -- 53
+53
+01      // Read X1 28 (40) to B
+28
+02      // Write from A to VGA H_ADDR
+B1
+03      // Write from B to VGA V_ADDR
+B2
+01      // Read 1 to B
+01
+03      // Write 1 to VGA_DATA
+B3
+54      // A+1 and save in A
+02      // Write A to X address
+4B
+07      // GOTO line 62 -- 3E and repeat
+3E
+00      // Read 0 to A
+00  
+02      // Write 0 to X address to reset
+4B
+00      // Read from 4B (00) to A -- X address
+4B
+01      // Read h boarder to B from 4C (A0 -- 160)
+4C
+96      // if X on X boundary, go to line 108 -- 6C
+6C
+01      // Read Y2 50 (80) to B
+50
+02      // Write from A to VGA H_ADDR
+B1
+03      // Write from B to VGA V_ADDR
+B2
+01      // Read 1 to B
+01
+03      // Write 1 to VGA_DATA
+B3
+54      // A+1 and save in A
+02      // Write A to X address
+4B
+07      // GOTO line 87 -- 57 and repeat
+57
+00      // Read 0 to A
+00  
+02      // Write 0 to X address to reset
+4B
+00      // Read Mouse X into A
+A1
+01      // Read Mouse Y into B
+A2
+02      // Write Mouse X into 7-Seg
+D1
+03      // Write Mouse Y into 7-Seg
+D0
+02      // Write Mouse X to VGA B1
+B1
+03      // Write Mouse Y to VGA B2
+B2
+01      // Read 1 to B
+01
+03      // Write 1 to VGA DATA
+B3
+08
+00      // Read last mouse X to A
+7E
+01      // Read X1 to B
+32
+96      // if X on X1, do not reset
+08
+01      // Read X2 to B
+6E
+96      // if X on X2, do not reset
+08
+00      // Read last mouse Y to A
+7F
+01      // Read Y1 to B
+28
+96      // if Y on Y1, do not reset
+08
+01      // Read Y2 on B
+50
+96      // if Y on Y2, do not reset
+08
+00      // Read last mouse X to A
+7E
+01      // Read last mouse Y to B
+7F
+02      // Write to VGA HADDR
+B1
+03      // Write to VGA
+B2
+01      // Read 0 to B
+00      
+03      // Write 0 to VGA_DATA
+B3
+00      // Read Mouse X into A
+A1
+01      // Read Mouse Y into B
+A2
+02      // save current mouse X
+7E
+03      // save current mouse y
+7F
+02      // Write Mouse X into 7-Seg
+D1
+03      // Write Mouse Y into 7-Seg
+D0
+02      // Write Mouse X to VGA B1
+B1
+03      // Write Mouse Y to VGA B2
+B2
+01      // Read 1 to B
+01
+03      // Write 1 to VGA DATA
+B3
+08
+
+
+
+@FE
+B5
+81
+
+

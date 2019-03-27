@@ -1,0 +1,46 @@
+00      // Read 4A (F0)(RAM[0]) to A -- VGA initial colour
+4A
+02      // Write from A to VGA colour address
+B0
+00      // Read 4B to A -- FB X address
+4B
+01      // Read h boarder to B from 4C (A0 -- 160)
+4C
+96      // if X on X boundary, go to reset x to 0 and y++ (line 33 -- 21)
+21
+00      // Read 4D to A -- FB Y address
+4D
+01      // Read y boarder to B from 78
+78
+96      // if Y on Y boundary, go to IDLE
+08
+00      // Read X to A
+4B
+01      // Read Y to B
+4D
+02      // Write X address to B1
+B1
+03      // Write Y address to B2
+B2
+01      // Read 0 to B
+00
+03      // Write 0 to VGA_DATA
+B3
+54      // A+1 save in A
+02      // Write from a to 4B
+4B
+07      // go to line 04 and repeat
+04
+00      // Read 0 to A
+00
+02      // Write A to 4B
+4B  
+01      // Read Y from 4D
+4D
+65      // B + 1 and save in B
+03      // Write B into 4D
+4D
+07      // go to line 4
+04
+
+
